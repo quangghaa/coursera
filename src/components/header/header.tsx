@@ -1,14 +1,84 @@
-import { Button } from "antd";
+import { Button, Dropdown, Popover } from "antd";
 import Search from "antd/es/input/Search";
 import React, { useState } from "react";
 import { LogoImg } from "../../utils/header-img";
 import { BellIcon, MediumDropdownIcon, UserIcon, DropdownIcon, BigDropdownIcon, DropdownIconBlue } from "../../utils/header-svg";
 import "./style.css";
+import type { MenuProps } from 'antd';
 
 function Header(props: any) {
     const onSearch = (value: string) => console.log(value);
 
     const [user, setUser] = useState("ha quang")
+
+    const items: MenuProps['items'] = [
+        {
+          key: '1',
+          label: (
+            <a className="nav-item" target="_blank" rel="noopener noreferrer" href="#">
+              <div className="bold">Online degrees</div>
+              <div>Explore bachelor's and master's degrees</div>
+            </a>
+          ),
+        },
+        {
+          key: '2',
+          label: (
+            <a className="nav-item" target="_blank" rel="noopener noreferrer" href="#">
+              <div className="bold">Online degrees</div>
+              <div>Explore bachelor's and master's degrees</div>
+            </a>
+          ),
+        },
+        {
+          key: '3',
+          label: (
+            <a className="nav-item" target="_blank" rel="noopener noreferrer" href="#">
+              <div className="bold">Online degrees</div>
+              <div>Explore bachelor's and master's degrees</div>
+            </a>
+          ),
+        },
+      ];
+
+      const text = <span>Title</span>;
+
+      const content = (
+        <ul className="user-option-list">
+            <li className="user-option-item">My course</li>
+            <li  className="user-option-item">Profile</li>
+            <li  className="user-option-item">My purchases</li>
+            <li  className="user-option-item">Settings</li>
+            <li  className="user-option-item">Updates</li>
+            <li  className="user-option-item">Accomplishments</li>
+            <li  className="user-option-item">Help center</li>
+            <li  className="user-option-item">Logout</li>
+        </ul>
+      );
+
+    function changeBg() {
+        var id = (document.getElementById("user-info-id")) as HTMLElement
+        if(!id.classList.contains("light-gray-bg")) {
+            id.classList.add("light-gray-bg")
+        }
+
+        var id = (document.getElementById("user-info-btn-id")) as HTMLElement
+        if(!id.classList.contains("light-gray-bg")) {
+            id.classList.add("light-gray-bg")
+        }
+    }
+
+    function removeChangeBg() {
+        var id = (document.getElementById("user-info-id")) as HTMLElement
+        if(id.classList.contains("light-gray-bg")) {
+            id.classList.remove("light-gray-bg")
+        }
+
+        var id = (document.getElementById("user-info-btn-id")) as HTMLElement
+        if(id.classList.contains("light-gray-bg")) {
+            id.classList.remove("light-gray-bg")
+        }
+    }
 
     return (
         <>
@@ -35,11 +105,21 @@ function Header(props: any) {
                 <div className="h-right">
                     <ul className="h-nav">
                         <li className="h-nav-item">
-                            <div className="h-nav-dropdown-item">
+                            {/* <div className="h-nav-dropdown-item">
                                 Online Degrees 
                                 &nbsp;
                                 <BigDropdownIcon />
-                            </div>
+                            </div> */}
+
+                            <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+                                <div className="h-nav-dropdown-item">
+                                    <Button className="h-nav-dropdown-item-btn">
+                                        Online Degrees 
+                                        &nbsp;
+                                        <BigDropdownIcon />
+                                    </Button>
+                                </div>
+                            </Dropdown>
                         </li>
                         <li className="h-nav-item hover-underline">Find your New Career</li>
                         <li className="h-nav-item hover-underline">For Enterprise</li>
@@ -63,16 +143,19 @@ function Header(props: any) {
                         </div>
                     </div> */}
 
-                    <div className="user-info">
-                        <button className="user-info-btn">
-                            <div className="user-icon">
-                            <UserIcon />
-                            </div>
-                            <div className="user-name">
-                            {user}
-                            </div>
-                            <MediumDropdownIcon />
-                        </button>
+                    <div id="user-info-id" className="user-info" onMouseOver={changeBg} onMouseLeave={removeChangeBg}>
+
+                        <Popover id="user-option-id" placement="bottomRight" content={content} trigger="click">
+                            <button id="user-info-btn-id" className="user-info-btn">
+                                <div className="user-icon">
+                                <UserIcon />
+                                </div>
+                                <div className="user-name">
+                                {user}
+                                </div>
+                                <MediumDropdownIcon />
+                            </button>
+                        </Popover>
                     </div>
                 </div>
 

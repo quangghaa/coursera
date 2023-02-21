@@ -11,14 +11,6 @@
     display: none;
 }
 
-.show {
-    display: block;
-}
-
-.hold {
-    display: block;
-}
-
 .ex-modal-b {
     position: absolute;
     width: 400px;
@@ -26,6 +18,28 @@
     background: #f3f3f3;
     color: black;
     z-index: 1;
+}
+
+.ex-modal-c {
+    position: absolute;
+    left: calc(400px + 2rem);
+    width: 1200px;
+    height: calc(100% - 18px);
+    background: #fff;
+    color: black;
+    z-index: 1;
+    display: none;
+    padding: 2rem 3rem;
+
+    overflow-y: auto;
+}
+
+.show {
+    display: block;
+}
+
+.hold {
+    display: block;
 }
 
 .em-content {
@@ -71,4 +85,103 @@
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.mc-title-section {
+    padding-bottom: 2rem;
+}
+
+.mc-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.mc-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgb(161, 161, 161);
+}
+
+.nav-item-section {
+    padding-right: 2rem;
+    height: 400px;
+}
+
+.nil-head {
+    width: 100%;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nil-list {
+    
+}
+
+.nil-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0 0 0;
+}
+
+.nili-icon {
+    height: 40px;
+    width: 40px;
+    background: rgb(194, 193, 193);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nili-info {
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nili-name {
+    
+}
+
+.nili-des {
+    color: rgb(161, 161, 161);
+}
+
+.view-all-link {
+    color: rgb(40, 152, 226);
+    text-decoration: none;
+}
+
+.mt-2rem {
+    margin-top: 2rem;
+}
+
+.mb-2rem {
+    margin-bottom: 2rem;
+}
+
+.mt-5px {
+    margin-top: 5px;
+}
+
+.view-all-degree-btn {
+    
+}
+
+.view-all-degree-btn-b {
+    color: rgb(42, 182, 247);
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid rgb(42, 182, 247);
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+.view-all-degree-btn-b:hover {
+    color: #fff;
+    background: rgb(42, 182, 247);
 }

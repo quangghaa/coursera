@@ -56,6 +56,12 @@
     align-items: center;
 }
 
+.h-nav-dropdown-item-btn {
+    border: unset;
+    display: flex;
+    align-items: center;
+}
+
 .login-and-join{
     display: flex;
     align-items: center;
@@ -76,12 +82,11 @@
     height: 68px;
     display: flex;
     align-items: center;
-    padding: 0 2.5rem 0 0;
 }
 
-.user-info:hover {
-    background: #ddd9d9;
-}
+/* .user-info:hover {
+    background: #ebeaea;
+} */
 
 .user-icon {
     width: 40px;
@@ -97,16 +102,21 @@
 
 .user-info-btn {
     padding-left: 2rem;
+    padding-right: 3rem;
     box-sizing: border-box;
-    background: #fff;
     border: unset;
-    border-left: 2px solid #ddd9d9;
+    border-left: 2px solid #ebeaea;
     display: flex;
     align-items: center;
+    background: #fff;
+}
+
+.light-gray-bg {
+    background: #ebeaea;
 }
 
 .user-info-btn:hover {
-    background: #ddd9d9;
+    cursor: pointer;
 }
 
 .user-name {
@@ -171,4 +181,46 @@
 .bell-icon:hover {
     background: #ddd9d9;
     cursor: pointer;
+}
+
+.nav-item {
+    font-size: 0.9rem;
+
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.ant-dropdown-placement-bottomLeft {
+    top: 50px!important;
+}
+
+.ant-dropdown-menu {
+    padding: 0.5rem 1rem !important;
+}
+
+.ant-dropdown-menu-item-only-child:hover {
+    background: #eaf8fdfb !important;
+}
+
+.user-option-list {
+    flex-direction: column;
+    min-width: 245px;
+}
+
+.user-option-item {
+    padding: 1rem;
+}
+
+.user-option-item:hover {
+    background: rgb(241, 241, 241);
+}
+
+.ant-popover-arrow {
+    height: 0 !important;
+}
+
+#user-option-id.ant-popover-inner {
+    padding: unset;
 }
