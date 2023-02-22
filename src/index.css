@@ -23,6 +23,8 @@ code {
   width: 100%;
   /* height: (100% - 65px);
   background-color: gray; */
+  background: #f5f7f8;
+  /* overflow-y: scroll; */
 }
 
 .logo {
@@ -33,4 +35,20 @@ code {
 .app-body {
   position: relative;
   top: 68px;
+  padding: 36px 0;
+
+  display: block;
+  max-width: 1017px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-body-bg {
+  /* height: calc(100% + 65px); */
+  background: #f5f7f8;
+  /* overflow: hidden; */
+}
+
+.full-bg {
+  background: #f5f7f8;
 }

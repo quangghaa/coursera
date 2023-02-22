@@ -1,6 +1,8 @@
+import { Col, Row } from 'antd';
 import React, { useState } from 'react';
 import Header from './components/header/header';
 import ModalExplore from './components/modal/explore';
+import CourseList from './pages/course-list/course-list';
 
 interface ChildItem {
   name: string,
@@ -64,7 +66,7 @@ const fakeDegree = {
       name: "Computer Science 2",
       description: "London"
     },
-  ] as ChildItem[], 
+  ] as ChildItem[],
   earnToward: [
     {
       name: "Big data",
@@ -110,7 +112,7 @@ const fakeCerti = {
       name: "Computer Science 2",
       description: "London"
     },
-  ] as ChildItem[], 
+  ] as ChildItem[],
   earnToward: [] as ChildItem[]
 } as GoalObject
 
@@ -147,7 +149,7 @@ const fakeAdvanceCareer = {
       name: "Network manager",
       description: "London"
     },
-  ] as ChildItem[], 
+  ] as ChildItem[],
   arts: [
     {
       name: "Grafic Designer",
@@ -297,7 +299,7 @@ function App() {
       // console.log("display block")
       id.classList.add("show")
     }
-    
+
     setIsIn(1)
   }
 
@@ -313,14 +315,14 @@ function App() {
   function hideDropdown() {
     var id = (document.getElementById("ex-modal-id")) as HTMLElement
     setIsIn(0)
-    
+
     setTimeout(() => {
       if (id.classList.contains("show") && id.classList.contains("hold")) {
         return
       }
-      
-        id.classList.remove("show")
-        id.classList.remove("hold")
+
+      id.classList.remove("show")
+      id.classList.remove("hold")
 
     }, 150)
   }
@@ -328,10 +330,10 @@ function App() {
   function closeDropdown() {
     var id = (document.getElementById("ex-modal-id")) as HTMLElement
     setIsIn(0)
-    
+
     setTimeout(() => {
-        id.classList.remove("show")
-        id.classList.remove("hold")
+      id.classList.remove("show")
+      id.classList.remove("hold")
 
     }, 150)
   }
@@ -340,13 +342,13 @@ function App() {
     e.stopPropagation()
     console.log("show child modal")
     var id = (document.getElementById("ex-modal-child-id")) as HTMLElement
-   
-      if (!id.classList.contains("show")) {
-        console.log("show child modal: add show")
-        id.classList.add("show")
-      }
-    
-    switch(flag) {
+
+    if (!id.classList.contains("show")) {
+      console.log("show child modal: add show")
+      id.classList.add("show")
+    }
+
+    switch (flag) {
       case 0: {
         setGoalData(fakeDegree)
         setTipe(0)
@@ -378,7 +380,7 @@ function App() {
         setTipe(1)
         break
       }
-      default:{
+      default: {
         id.classList.remove("show")
         id.classList.remove("hold")
         console.log("SOMETHING WRONGGGG")
@@ -396,12 +398,12 @@ function App() {
         console.log("close child modal: do not close")
         return
       }
-        // console.log("close child modal: can close ")
-        // id.classList.remove("show")
-        // id.classList.remove("hold")
+      // console.log("close child modal: can close ")
+      // id.classList.remove("show")
+      // id.classList.remove("hold")
 
     }, 0)
-    
+
     // setIsIn(1)
   }
 
@@ -410,8 +412,8 @@ function App() {
     // setIsIn(0)
     console.log("totally close child")
     setTimeout(() => {
-        id.classList.remove("show")
-        id.classList.remove("hold")
+      id.classList.remove("show")
+      id.classList.remove("hold")
 
     }, 150)
   }
@@ -430,24 +432,18 @@ function App() {
 
   return (
     <div className='app'>
-      <Header isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown}/>
+      <Header isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
 
-      <div className='app-body'>
-        <div className='app-body-b'>
-          APP content
-          <h1>CONTENTTTTTTTTTTTTT</h1>
-          <h1>CONTENTTTTTTTTTTTTT</h1>
-          <h1>CONTENTTTTTTTTTTTTT</h1>
-          <h1>CONTENTTTTTTTTTTTTT</h1>
-          <h1>CONTENTTTTTTTTTTTTT</h1>
-
-        </div>
-        <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData}  close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
-          holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal} 
+      {/* <div className='app-body-bg'> */}
+        <div className='app-body'>
+          <CourseList />
+          <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData} close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
+            holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal}
           />
+        </div>
       </div>
 
-    </div>
+    // </div>
   );
 }
 

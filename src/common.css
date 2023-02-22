@@ -26,3 +26,12 @@
   .pd-0 {
     padding: unset;
   }
+
+  a {
+    text-decoration: none;
+    
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
