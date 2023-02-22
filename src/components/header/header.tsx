@@ -113,20 +113,20 @@ function Header(props: any) {
 
                             <Dropdown menu={{ items }} placement="bottomLeft" arrow>
                                 <div className="h-nav-dropdown-item">
-                                    <Button className="h-nav-dropdown-item-btn">
+                                    <button className="h-nav-dropdown-item-btn">
                                         Online Degrees 
                                         &nbsp;
                                         <BigDropdownIcon />
-                                    </Button>
+                                    </button>
                                 </div>
                             </Dropdown>
                         </li>
                         <li className="h-nav-item hover-underline">Find your New Career</li>
                         <li className="h-nav-item hover-underline">For Enterprise</li>
                         <li className="h-nav-item hover-underline" >For Universities</li>
-                        <li className="h-nav-item">
+                        <li className="h-nav-item pr-0.5rem">
                             <div className="bell-icon">
-                            <BellIcon />
+                                <BellIcon />
                             </div>
                         </li>
                     </ul>

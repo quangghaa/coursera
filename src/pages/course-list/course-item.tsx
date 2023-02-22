@@ -1,3 +1,4 @@
+import Item from "antd/es/list/Item";
 import React from "react";
 import { CourseItemIcon, CourseItemImg, StarIcon } from "../../utils/course-item-img";
 
@@ -8,7 +9,6 @@ function CourseItem(props: any) {
             <div className="course-item-b">
                 <div className="ci-img">
                     <CourseItemImg />
-
                 </div>
                 <div className="ci-info">
                     <div className="ci-head">
@@ -18,18 +18,18 @@ function CourseItem(props: any) {
                                 <CourseItemIcon />
                             </div>
                             <div className="cai-text">
-                                Georgia Institue of Technology
+                                {props.item.university}
                             </div>
                         </div>
 
                         <div className="cai-name">
-                            Lesson | Small & Conversational Vocabulary
+                            {props.item.name}
                         </div>
 
-                        {props.des == 1 &&
+                        {props.item.gainSkills.length != 0 &&
                             <div className="cai-des small-font">
                                 <strong>skills you'll gain:&nbsp;</strong>
-                                <span className="gray-font">Communication, Wrting Communication, Wrting Communication, Wrting</span>
+                                <span className="gray-font">{props.item.gainSkills}</span>
                             </div>
                         }
 
@@ -40,12 +40,12 @@ function CourseItem(props: any) {
                             <span className="cai-icon">
                                 <StarIcon/>
                             </span>
-                            <span className="cair-average small-font mr-4px">4.3</span>
-                            <span className="cair-total-view small-font gray-font">(605) reviews</span>
+                            <span className="cair-average small-font mr-4px">{props.item.average}</span>
+                            <span className="cair-total-view small-font gray-font">({props.item.totalReviews}) reviews</span>
                         </div>
 
                         <div className="cai-week small-font gray-font">
-                            Mixed Course 1-4 Weeks
+                            {props.item.courseType}
                         </div>
                     </div>
                 </div>

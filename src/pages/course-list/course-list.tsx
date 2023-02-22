@@ -1,21 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import { NextArrowIcon, PreviousArrowIcon } from "../../utils/course-item-img";
 import CourseItem from "./course-item";
 import "./style.css"
 
+interface Item {
+    icon: string,
+    university: string, 
+    name: string,
+    gainSkills: string, 
+    average: number,
+    totalReviews: number,
+    courseType: string
+}
+
 function CourseList(props: any) {
+    const [data, setData] = useState([
+        {
+            icon:"",
+            university: "University of London",
+            name: "Lesson | Small & Conversational Vocabulary",
+            gainSkills: "Communication",
+            average: 4.6,
+            totalReviews: 605,
+            courseType: "Mixed Course 1-4 weeks"
+        },
+        {
+            icon:"",
+            university: "University of London",
+            name: "Data engineering",
+            gainSkills: "Design, Coding",
+            average: 4.6,
+            totalReviews: 305,
+            courseType: "Mixed Course 1-4 weeks"
+        },
+        {
+            icon:"",
+            university: "University of London",
+            name: "Lesson | Small & Conversational Vocabulary",
+            gainSkills: "",
+            average: 4.6,
+            totalReviews: 605,
+            courseType: "Mixed Course 1-4 weeks"
+        },
+        {
+            icon:"",
+            university: "University of London",
+            name: "Data engineering",
+            gainSkills: "",
+            average: 4.6,
+            totalReviews: 305,
+            courseType: "Mixed Course 1-4 weeks"
+        },
+        {
+            icon:"",
+            university: "University of London",
+            name: "Lesson | Small & Conversational Vocabulary",
+            gainSkills: "",
+            average: 4.6,
+            totalReviews: 605,
+            courseType: "Mixed Course 1-4 weeks"
+        },
+        {
+            icon:"",
+            university: "University of London",
+            name: "Data engineering",
+            gainSkills: "Design, Coding",
+            average: 4.6,
+            totalReviews: 305,
+            courseType: "Mixed Course 1-4 weeks"
+        }
+    ] as Item[])
+ 
     return (
         <div> 
             <div className="course-item-header">
                 4.561 results for "english free"
             </div>
             <div className='course-item-wrapper'>
-
-                <CourseItem />
-                <CourseItem des={1} />
-                <CourseItem des={1} />
-                <CourseItem />
-
+                {
+                    data.map((d: any) => {
+                        return <>
+                            <CourseItem item={d}/>
+                        </>
+                    })
+                }
 
             </div>
 

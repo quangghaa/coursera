@@ -20,6 +20,7 @@
 .h-left {
     display: flex;
     align-items: center;
+    flex-grow: 1;
 }
 
 .h-ml {
@@ -33,6 +34,7 @@
 }
 
 .h-logo {
+    flex-grow: 0;
     padding: 16.25px 24px;
 }
 
@@ -41,6 +43,7 @@
     align-items: center;
     font-size: 0.9rem;
     font-weight: 400;
+    flex-grow: 0;
 }
 
 .h-nav {
@@ -50,7 +53,8 @@
 }
 
 .h-nav-item {
-    padding-right: 1.5rem;
+    padding-right: 1rem;
+    white-space: nowrap;
 }
 
 .h-nav-dropdown-item {
@@ -62,6 +66,8 @@
     border: unset;
     display: flex;
     align-items: center;
+    background: #fff;
+    padding: unset;
 }
 
 .login-and-join{
@@ -103,7 +109,7 @@
 }
 
 .user-info-btn {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
     padding-right: 3rem;
     box-sizing: border-box;
     border: unset;
@@ -111,6 +117,7 @@
     display: flex;
     align-items: center;
     background: #fff;
+    white-space: nowrap;
 }
 
 .light-gray-bg {
@@ -126,6 +133,7 @@
 }
 
 .h-explore-btn {
+    flex-grow: 0;
     height: 52px;
     /* background: #000; */
     transform: translateY(8px);
@@ -173,7 +181,9 @@
 }
 
 .h-search {
-    width: 480px;
+    flex-grow: 1;
+    max-width: 480px;
+    min-width: 200px;
 }
 
 .bell-icon {
@@ -225,4 +235,8 @@
 
 #user-option-id.ant-popover-inner {
     padding: unset;
+}
+
+.pr {
+    padding-right: 0.5rem;
 }
