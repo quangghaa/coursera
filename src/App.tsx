@@ -22,18 +22,13 @@ interface GoalObject {
 
 interface SubjectObject {
   title: string,
-  subtitle: string,
+  tipe: number,
   degrees: ChildItem[],
+  subDegreeTitle: string,
   certificates: ChildItem[],
-  getStarted: string[],
-  popularSkills: string[],
-}
-
-interface AdvanceYourCareer {
-  dataScience: string[],
-  business: string[],
-  computerScience: string[],
-  Arts: string[]
+  subCertificateTitle: string,
+  getStarted: ChildItem[],
+  popularSkills: ChildItem[],
 }
 
 const fakeDegree = {
@@ -116,16 +111,7 @@ const fakeCerti = {
       description: "London"
     },
   ] as ChildItem[], 
-  earnToward: [
-    {
-      name: "Big data",
-      description: "London"
-    },
-    {
-      name: "Innovation",
-      description: "London"
-    },
-  ] as ChildItem[]
+  earnToward: [] as ChildItem[]
 } as GoalObject
 
 const fakeAdvanceCareer = {
@@ -184,19 +170,131 @@ const fakeAdvanceCareer = {
   ] as ChildItem[]
 } as GoalObject
 
+const fakeBusiness = {
+  title: "Business",
+  tipe: 101,
+  degrees: [
+    {
+      name: "Master of Applied Data Science",
+      description: "University of Michigan"
+    },
+    {
+      name: "Master of Applied Data Science 2",
+      description: "University of Michigan 2"
+    },
+  ] as ChildItem[],
+  subDegreeTitle: "Breakthrough pricing 100%",
+  certificates: [
+    {
+      name: "MBA in Business of Analysis",
+      description: "O.P"
+    },
+    {
+      name: "MBA in Business of Analysis 2",
+      description: "O.P 2"
+    },
+  ] as ChildItem[],
+  subCertificateTitle: "In 3-9 month",
+  getStarted: [
+    {
+      name: "Free Courses",
+    },
+    {
+      name: "Most Popular",
+    },
+  ] as ChildItem[],
+  popularSkills: [
+    {
+      name: "Python",
+    },
+    {
+      name: "SQL",
+    },
+  ] as ChildItem[]
+
+} as SubjectObject
+
+const fakeLanguageLearning = {
+  title: "Language Learning",
+  tipe: 102,
+  degrees: [] as ChildItem[],
+  subDegreeTitle: "Breakthrough pricing 100%",
+  certificates: [
+    {
+      name: "MBA in Business of Analysis",
+      description: "O.P"
+    },
+    {
+      name: "MBA in Business of Analysis 2",
+      description: "O.P 2"
+    },
+  ] as ChildItem[],
+  subCertificateTitle: "In 3-9 month",
+  getStarted: [
+    {
+      name: "Free Courses",
+    },
+    {
+      name: "Most Popular",
+    },
+  ] as ChildItem[],
+  popularSkills: [
+    {
+      name: "Python",
+    },
+    {
+      name: "SQL",
+    },
+  ] as ChildItem[]
+} as SubjectObject
+
+const fakeMathAndLogic = {
+  title: "Business",
+  tipe: 103,
+  degrees: [
+    {
+      name: "Master of Applied Data Science",
+      description: "University of Michigan"
+    },
+    {
+      name: "Master of Applied Data Science 2",
+      description: "University of Michigan 2"
+    },
+  ] as ChildItem[],
+  subDegreeTitle: "Breakthrough pricing 100%",
+  certificates: [] as ChildItem[],
+  subCertificateTitle: "In 3-9 month",
+  getStarted: [
+    {
+      name: "Free Courses",
+    },
+    {
+      name: "Most Popular",
+    },
+  ] as ChildItem[],
+  popularSkills: [
+    {
+      name: "Python",
+    },
+    {
+      name: "SQL",
+    },
+  ] as ChildItem[]
+} as SubjectObject
+
 function App() {
   const [isIn, setIsIn] = useState(0)
 
   const [tipe, setTipe] = useState(0) // 0-Goals and 1-Subject 
   const [goalData, setGoalData] = useState(fakeAdvanceCareer)
-  const [subjectData, setSubjectData] = useState()
+  const [subjectData, setSubjectData] = useState(fakeBusiness)
 
   function showDropdown(e: any) {
     e.stopPropagation()
-    console.log("showDropdown")
+    // console.log("showDropdown")
     var id = (document.getElementById("ex-modal-id")) as HTMLElement
     if (!id.classList.contains("show")) {
-      console.log("display block")
+      // console.log("display block")
       id.classList.add("show")
     }
     
@@ -204,10 +302,10 @@ function App() {
   }
 
   function holdDropdown() {
-    console.log("holdDropdown")
+    // console.log("holdDropdown")
     var id = (document.getElementById("ex-modal-id")) as HTMLElement
     if (id.classList.contains("show") && !id.classList.contains("hold")) {
-      console.log("hold display block")
+      // console.log("hold display block")
       id.classList.add("hold")
     }
   }
@@ -240,27 +338,49 @@ function App() {
 
   function showChildModal(e: any, flag: number) {
     e.stopPropagation()
-    console.log("show child")
+    console.log("show child modal")
     var id = (document.getElementById("ex-modal-child-id")) as HTMLElement
-    if (!id.classList.contains("show")) {
-      console.log("display block")
-      id.classList.add("show")
-    }
+   
+      if (!id.classList.contains("show")) {
+        console.log("show child modal: add show")
+        id.classList.add("show")
+      }
     
     switch(flag) {
       case 0: {
         setGoalData(fakeDegree)
+        setTipe(0)
         break
       }
       case 1: {
         setGoalData(fakeCerti)
+        setTipe(0)
         break
       }
       case 2: {
         setGoalData(fakeAdvanceCareer)
+        setTipe(0)
+        break
+      }
+
+      case 101: {
+        setSubjectData(fakeBusiness)
+        setTipe(1)
+        break
+      }
+      case 102: {
+        setSubjectData(fakeLanguageLearning)
+        setTipe(1)
+        break
+      }
+      case 103: {
+        setSubjectData(fakeMathAndLogic)
+        setTipe(1)
         break
       }
       default:{
+        id.classList.remove("show")
+        id.classList.remove("hold")
         console.log("SOMETHING WRONGGGG")
       }
     }
@@ -269,24 +389,18 @@ function App() {
 
   function closeChildModal(e: any) {
     e.stopPropagation()
-    console.log("close child")
+    console.log("close child modal")
     var id = (document.getElementById("ex-modal-child-id")) as HTMLElement
-    // setTimeout(() => {
-    //   if (id.classList.contains("show")) {
-    //     console.log("display block")
-    //     id.classList.remove("show")
-    //   }
-    // }, 150)
-
     setTimeout(() => {
       if (id.classList.contains("show") && id.classList.contains("hold")) {
+        console.log("close child modal: do not close")
         return
       }
-      
-        id.classList.remove("show")
-        id.classList.remove("hold")
+        // console.log("close child modal: can close ")
+        // id.classList.remove("show")
+        // id.classList.remove("hold")
 
-    }, 150)
+    }, 0)
     
     // setIsIn(1)
   }
@@ -294,7 +408,7 @@ function App() {
   function totallyCloseChildModal() {
     var id = (document.getElementById("ex-modal-child-id")) as HTMLElement
     // setIsIn(0)
-    
+    console.log("totally close child")
     setTimeout(() => {
         id.classList.remove("show")
         id.classList.remove("hold")
@@ -304,10 +418,10 @@ function App() {
 
   function holdChildModal(e: any) {
     e.stopPropagation()
-    console.log("hold child")
+    console.log("hold child modal")
     var id = (document.getElementById("ex-modal-child-id")) as HTMLElement
     if (id.classList.contains("show") && !id.classList.contains("hold")) {
-      console.log("hold display block")
+      console.log("hold child modal: add hold")
       id.classList.add("hold")
     }
   }
@@ -328,8 +442,9 @@ function App() {
           <h1>CONTENTTTTTTTTTTTTT</h1>
 
         </div>
-        <ModalExplore tipe={tipe} goalData={goalData} subjectData={subjectData}  close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
-          holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal} />
+        <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData}  close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
+          holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal} 
+          />
       </div>
 
     </div>

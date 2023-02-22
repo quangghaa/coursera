@@ -13,7 +13,7 @@
 
 .ex-modal-b {
     position: absolute;
-    width: 400px;
+    width: 330px;
     height: calc(100% - 18px);
     background: #f3f3f3;
     color: black;
@@ -22,8 +22,8 @@
 
 .ex-modal-c {
     position: absolute;
-    left: calc(400px + 2rem);
-    width: 1200px;
+    left: calc(330px + 2rem);
+    width: 800px;
     height: calc(100% - 18px);
     background: #fff;
     color: black;
