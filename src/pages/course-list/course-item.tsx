@@ -5,7 +5,7 @@ import { CourseItemIcon, CourseItemImg, StarIcon } from "../../utils/course-item
 function CourseItem(props: any) {
 
     return (
-        <div className="course-item">
+        <div className="course-item" onClick={props.onClick}>
             <div className="course-item-b">
                 <div className="ci-img">
                     <CourseItemImg />

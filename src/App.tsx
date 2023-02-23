@@ -1,7 +1,9 @@
 import { Col, Row } from 'antd';
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/header';
 import ModalExplore from './components/modal/explore';
+import CourseInfo from './pages/course-info/course-info';
 import CourseList from './pages/course-list/course-list';
 
 interface ChildItem {
@@ -432,18 +434,21 @@ function App() {
 
   return (
     <div className='app'>
-      <Header isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
+      <BrowserRouter>
+        <Header isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
+        <div className='app-body-bg'>
+            <Routes>
+              <Route path="/" element={<CourseList />} />
+              <Route path="/learn/:name" element={<CourseInfo />} />
 
-      {/* <div className='app-body-bg'> */}
-        <div className='app-body'>
-          <CourseList />
-          <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData} close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
-            holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal}
-          />
+            </Routes>
         </div>
-      </div>
 
-    // </div>
+        <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData} close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
+          holdChildModal={holdChildModal} totallyCloseChildModal={totallyCloseChildModal}
+        />
+      </BrowserRouter>
+    </div>
   );
 }
 

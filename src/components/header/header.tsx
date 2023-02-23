@@ -5,6 +5,7 @@ import { LogoImg } from "../../utils/header-img";
 import { BellIcon, MediumDropdownIcon, UserIcon, DropdownIcon, BigDropdownIcon, DropdownIconBlue } from "../../utils/header-svg";
 import "./style.css";
 import type { MenuProps } from 'antd';
+import { useNavigate } from "react-router-dom";
 
 function Header(props: any) {
     const onSearch = (value: string) => console.log(value);
@@ -80,12 +81,18 @@ function Header(props: any) {
         }
     }
 
+    const navigate = useNavigate()
+
+    function toHome() {
+        navigate("/")
+    }
+
     return (
         <>
         <div className="header">
             <div className="header-b">
                 <div className="h-left">
-                    <div className="h-logo">
+                    <div className="h-logo" onClick={toHome}>
                         <LogoImg />
                     </div>
                     <div className="h-explore-btn" onMouseOver={props.hold}>

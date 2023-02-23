@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { NextArrowIcon, PreviousArrowIcon } from "../../utils/course-item-img";
 import CourseItem from "./course-item";
 import "./style.css"
@@ -70,9 +71,14 @@ function CourseList(props: any) {
             courseType: "Mixed Course 1-4 weeks"
         }
     ] as Item[])
+
+    const navigate = useNavigate()
+    function itemClick() {
+        navigate("/learn/something")
+    }
  
     return (
-        <div> 
+        <div className="app-body"> 
             <div className="course-item-header">
                 4.561 results for "english free"
             </div>
@@ -80,7 +86,7 @@ function CourseList(props: any) {
                 {
                     data.map((d: any) => {
                         return <>
-                            <CourseItem item={d}/>
+                            <CourseItem onClick={itemClick} item={d}/>
                         </>
                     })
                 }
