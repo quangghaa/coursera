@@ -6,6 +6,11 @@ import amalia from "../assets/course-info/Amalia_Stephens.png"
 import members from "../assets/course-info/SvgMembers.png"
 import book from "../assets/course-info/SvgBook.png"
 import offeredBy from "../assets/course-info/offerd-by.png"
+import pt from "../assets/course-info/Peter_Ward.png"
+import adv from "../assets/course-info/adv-img.png"
+import tabImg from "../assets/course-info/course-item-img.png"
+import cert from "../assets/course-info/cert-img.jpg"
+import asu from "../assets/course-info/ASUlogo.jpeg"
 
 function ArrowRight() {
     return (
@@ -109,7 +114,76 @@ function OfferdByImg() {
     )
 }
 
+function SliderImg() {
+    return (
+        <img src={pt} alt="peter-ward" />
+    )
+}
+
+function AdvertiseImg() {
+    return (
+        <img src={adv} alt="advertise" />
+    )
+}
+
+function TabSlideImg() {
+    return (
+        <img src={tabImg} alt="tab-slide-img" />
+    )
+}
+
+function CertImg() {
+    return (
+        <img src={cert} alt="certificate" className="cert-img-style" />
+    )
+}
+
+function CertSmallImg() {
+    return (
+        <img src={asu} alt="svu" />
+    )
+}
+
+function SylTimeIcon() {
+    return (
+        <svg aria-hidden="true" style={{fill:"#FFF",height:"20px",width:"20px"}} viewBox="0 0 48 48" role="img" aria-labelledby="Hourstocomplete97eb8972-7e52-44e4-bf42-e1d602beaa4e Hourstocomplete97eb8972-7e52-44e4-bf42-e1d602beaa4eDesc" xmlns="http://www.w3.org/2000/svg"><title id="Hourstocomplete97eb8972-7e52-44e4-bf42-e1d602beaa4e">Hours to complete</title><path d="M24 47C11.318375 47 1 36.681625 1 24S11.318375 1 24 1s23 10.318375 23 23-10.318375 23-23 23zM2.91666667 24c0 11.6255417 9.45779163 21.0833333 21.08333333 21.0833333S45.0833333 35.6255417 45.0833333 24 35.6255417 2.91666667 24 2.91666667 2.91666667 12.3744583 2.91666667 24zm19.12500003 1.9166667V6.70833333h2.9166666V23H35.5v2.9166667H22.0416667z" role="presentation"></path></svg>
+    )
+}
+
+function SylBookIcon() {
+    return (
+        <svg aria-hidden="true" style={{fill:"#FFF",height:"20px",width:"20px"}} viewBox="0 0 48 48" role="img" aria-labelledby="Reading34180784-c774-4a43-d823-f521c3931eda Reading34180784-c774-4a43-d823-f521c3931edaDesc" xmlns="http://www.w3.org/2000/svg"><title id="Reading34180784-c774-4a43-d823-f521c3931eda">Reading</title><path d="M28.67 14H38v19.68h-9.34c-4 0-4.08 2.32-4.08 2.32H23.4s-.05-2.32-4.03-2.32h-9.33l-.04-.53V14h9.34c1.96 0 3.76 1.1 4.66 2.83.9-1.74 2.7-2.83 4.67-2.83zm-.3 18H36V16h-7.64c-1 0-2 .56-2.7 1.25-.73.7-.66 1.6-.66 2.7h-1.98c0-.98.05-2-.67-2.7-.72-.7-1.66-1.26-2.68-1.25h-7.64L12 32h7.67c1.84 0 2.8.1 3.35 1V19.97H25V33c.55-.9 1.5-1 3.36-1zM24 47C11.3 47 1 36.7 1 24S11.3 1 24 1s23 10.3 23 23-10.3 23-23 23zm0-1.84c11.7 0 21.16-9.47 21.16-21.16C45.16 12.3 35.7 2.84 24 2.84 12.3 2.84 2.84 12.3 2.84 24c0 11.7 9.47 21.16 21.16 21.16z" role="presentation"></path></svg>
+    )
+}
+
+function SylVideoIcon() {
+    return (
+        <svg aria-hidden="true" style={{fill:"#2A73CC",height:"24px",width:"24px"}} viewBox="0 0 48 48" role="img" aria-labelledby="Videodedd1187-beef-4cec-ca66-a7bc6e6b556b Videodedd1187-beef-4cec-ca66-a7bc6e6b556bDesc" xmlns="http://www.w3.org/2000/svg"><title id="Videodedd1187-beef-4cec-ca66-a7bc6e6b556b">Video</title><path d="M19 33.94V15l15 9.47-15 9.47zM24 47C11.3 47 1 36.7 1 24S11.3 1 24 1s23 10.3 23 23-10.3 23-23 23zm0-1.84c11.7 0 21.16-9.47 21.16-21.16C45.16 12.3 35.7 2.84 24 2.84 12.3 2.84 2.84 12.3 2.84 24c0 11.7 9.47 21.16 21.16 21.16z" role="presentation"></path></svg>
+    )
+}
+
+function SylReadingIcon() {
+    return (
+        <svg aria-hidden="true" style={{fill:"#1F8354",height:"24px",width:"24px"}} viewBox="0 0 48 48" role="img" aria-labelledby="Reading3bfcadb1-8257-4eae-e808-5f51da882ed3 Reading3bfcadb1-8257-4eae-e808-5f51da882ed3Desc" xmlns="http://www.w3.org/2000/svg"><title id="Reading3bfcadb1-8257-4eae-e808-5f51da882ed3">Reading</title><path d="M28.67 14H38v19.68h-9.34c-4 0-4.08 2.32-4.08 2.32H23.4s-.05-2.32-4.03-2.32h-9.33l-.04-.53V14h9.34c1.96 0 3.76 1.1 4.66 2.83.9-1.74 2.7-2.83 4.67-2.83zm-.3 18H36V16h-7.64c-1 0-2 .56-2.7 1.25-.73.7-.66 1.6-.66 2.7h-1.98c0-.98.05-2-.67-2.7-.72-.7-1.66-1.26-2.68-1.25h-7.64L12 32h7.67c1.84 0 2.8.1 3.35 1V19.97H25V33c.55-.9 1.5-1 3.36-1zM24 47C11.3 47 1 36.7 1 24S11.3 1 24 1s23 10.3 23 23-10.3 23-23 23zm0-1.84c11.7 0 21.16-9.47 21.16-21.16C45.16 12.3 35.7 2.84 24 2.84 12.3 2.84 2.84 12.3 2.84 24c0 11.7 9.47 21.16 21.16 21.16z" role="presentation"></path></svg>
+    )
+}
+
+function SylPraticeIcon() {
+    return (
+        <svg aria-hidden="true" style={{fill:"#0156B8",height:"24px",width:"24px"}} viewBox="0 0 48 48" role="img" aria-labelledby="Quizf379fdf4-bef9-4e7f-b05f-bf2d8f388cc1 Quizf379fdf4-bef9-4e7f-b05f-bf2d8f388cc1Desc" xmlns="http://www.w3.org/2000/svg"><title id="Quizf379fdf4-bef9-4e7f-b05f-bf2d8f388cc1">Quiz</title><path d="M24 47C11.3 47 1 36.7 1 24S11.3 1 24 1s23 10.3 23 23-10.3 23-23 23zm0-1.84c11.7 0 21.16-9.47 21.16-21.16C45.16 12.3 35.7 2.84 24 2.84 12.3 2.84 2.84 12.3 2.84 24c0 11.7 9.47 21.16 21.16 21.16zM21 17h10v2H21v-2zm0 6h10v2H21v-2zm0 6h10v2H21v-2zm-3-10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-5-21h22v28H13V10zm2 2v24h18V12H15z" role="presentation"></path></svg>
+    )
+}
+
+function FaqRightIcon() {
+    return (
+        <svg aria-hidden="true" id="faq-right-icon-id" className="faq-right-icon-style" focusable="false" viewBox="0 0 48 48" role="img" aria-labelledby="ChevronRightbfaa93c1-88dc-41e6-b6f3-9e4e0fec92e9 ChevronRightbfaa93c1-88dc-41e6-b6f3-9e4e0fec92e9Desc" xmlns="http://www.w3.org/2000/svg"><polygon transform="translate(23.999500, 24.000000) scale(-1, 1) translate(-23.999500, -24.000000)" points="16 24 30.585 40 31.999 38.586 18.828 24 31.999 9.415 30.585 8" role="presentation"></polygon></svg>
+    )
+}
+
 export {ArrowRight, CourseInfoStarIcon, LikeIcon, InstructorImg, GatechImg,
         FlexDeadlineIcon, OnlineIcon, TimeCompleteIcon, EnglishIcon, VIcon,
         ArrowRightLinkIcon, InsRatingIcon, InfoIcon, AmaliaImg,
-        MembersIcon, BookIcon, OfferdByImg}
+        MembersIcon, BookIcon, OfferdByImg, SliderImg, AdvertiseImg,
+        TabSlideImg, CertImg, CertSmallImg,
+        SylTimeIcon, SylBookIcon,SylVideoIcon, SylReadingIcon, SylPraticeIcon,
+        FaqRightIcon}
