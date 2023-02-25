@@ -1,6 +1,30 @@
 import React from "react";
 import { ArrowRightLinkIcon, EnglishIcon, FlexDeadlineIcon, OnlineIcon, TimeCompleteIcon, VIcon } from "../../utils/course-info";
 
+interface AboutItem {
+    icon: string,
+    title: string,
+    description: string
+}
+
+interface About {
+    recentView: string,
+    description: string[],
+    deadline: AboutItem,
+    tipe: AboutItem,
+    timeToComplete: AboutItem,
+    english: AboutItem
+}
+
+const aboutData = {
+    recentView: "217,046",
+    description: ["This lesson is part of a full course, Speak English Professionally: In Person, Online & On the Phone. Take this lesson to get a short tutorial on the learning objectives covered. To dive deeper into this topic, take the full course. ", "In this lesson, you will review professional conversational vocabulary."],
+    deadline: {icon: "", title: "Flexible deadline", description: "Reset deadlines in accordance to your schedule."} as AboutItem,
+    tipe: {icon: "", title: "100% online", description: "Start instantly and learn at your own schedule"} as AboutItem,
+    timeToComplete: {icon: "", title: "Approx. 1 hour to complete", description: ""} as AboutItem,
+    english: {icon: "", title: "English", description: "Subtitles: Arabic, French, Bengali, Ukrainian, Portuguese (European), Chinese (Simplified), Italian, Portuguese (Brazilian), Vietnamese, Korean, Afrikaans, German, Javanese, Russian, Turkish, Burmese, English, Slovak, Spanish, Swahili, Japanese, Persian, Polish"} as AboutItem,
+}
+
 function About(props: any) {
     return (
         <div className="about-bg">
@@ -13,17 +37,18 @@ function About(props: any) {
                             </h2>
 
                             <div className="abl-recent-view">
-                                218,045 recent views
+                                {aboutData.recentView} recent views
                             </div>
 
                             <div className="abl-des">
-                                <p className="abld-para">
-                                    This lesson is part of a full course, Speak English Professionally: In Person, Online & On the Phone. Take this lesson to get a short tutorial on the learning objectives covered. To dive deeper into this topic, take the full course.
-                                </p>
-
-                                <p className="abld-para">
-                                    In this lesson, you will review professional conversational vocabulary.
-                                </p>
+                                {
+                                    aboutData.description.map((d: any) => {
+                                        return <p className="abld-para">
+                                                {d}
+                                            </p>
+                                    })
+                                }
+                            
                             </div>
                         </div>
 
@@ -37,10 +62,10 @@ function About(props: any) {
 
                                         <div className="pgi-info">
                                             <div className="pgi-head">
-                                                Flexible deadlines
+                                                {aboutData.deadline.title}
                                             </div>
                                             <div className="pgi-body">
-                                                Reset deadlines in accordance to your schedule.
+                                                {aboutData.deadline.description}
                                             </div>
                                         </div>
                                     </div>
@@ -52,10 +77,10 @@ function About(props: any) {
 
                                         <div className="pgi-info">
                                             <div className="pgi-head">
-                                                100% Online
+                                                {aboutData.tipe.title}
                                             </div>
                                             <div className="pgi-body">
-                                                Start instantly and learn at your own schedule.
+                                                {aboutData.tipe.description}
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +92,7 @@ function About(props: any) {
 
                                         <div className="pgi-info">
                                             <div className="pgi-head">
-                                                Approx. 1 hour to complete
+                                                {aboutData.timeToComplete.title}
                                             </div>
 
                                         </div>
@@ -80,10 +105,11 @@ function About(props: any) {
 
                                         <div className="pgi-info">
                                             <div className="pgi-head">
+                                                {aboutData.english.title}
                                                 English
                                             </div>
                                             <div className="pgi-body">
-                                                Subtitles: Arabic, French, Bengali, Ukrainian, Portuguese (European), Chinese (Simplified), Italian, Portuguese
+                                                {aboutData.english.description}
                                             </div>
                                             <div className="pgi-show-all">
                                                 <span className="pgi-show-all-btn">SHOW ALL</span>

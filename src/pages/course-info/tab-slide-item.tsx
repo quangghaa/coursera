@@ -15,15 +15,15 @@ function TabSlideItem(props: any) {
                         </div>
                         <div className="tsicb-info">
                             <div className="t-info-title">
-                                Lesson | Express Yourself: Pronunciation
+                                {props.data.name}
                             </div>
                             <div className="t-info-des">
-                                Georgia Institude of Technology
+                                {props.data.department}
                             </div>
                         </div>
 
                         <div className="tsicb-course">
-                            <div className="course-box">1 course</div>
+                            <div className="course-box">{props.data.course} course</div>
                         </div>
                     </div>
                 </a>

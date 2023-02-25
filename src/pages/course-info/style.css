@@ -1580,6 +1580,42 @@ a.adv-border {
     border: unset;
 }
 
+.discover-link-wrapper {
+     padding: 34px 0;
+}
+
+.discover-link {
+    text-decoration: none;
+    display: flex;
+    border: 1px solid #c3c5c6;
+    border-radius: 4px;
+    /* margin: 32px 0; */
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.discover-link p {
+    color: #1f1f1f;
+    letter-spacing: 0;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    flex-grow: 1;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+}
+
+.dl-link {
+    font-weight: bold;
+    color: #0056d2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
 
 
 

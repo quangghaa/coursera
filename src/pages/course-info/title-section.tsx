@@ -2,6 +2,28 @@ import React from "react";
 import { ArrowRight, CourseInfoStarIcon, GatechImg, InstructorImg, LikeIcon } from "../../utils/course-info";
 import { StarIcon } from "../../utils/course-item-img";
 
+interface CourseInfo {
+    name: string,
+    starList: number[],
+    ratingAverage: number,
+    totalRating: number,
+    likePercentage: number,
+    totalEnrolled: string,
+    instructorName: string,
+    instructorImg: string,
+    offeredByImg: string,
+}
+
+const courseInfoData = {
+    name: "Lesson | Small Talk & Conversational Vocabulary",
+    starList: [1, 1, 1, 1, 1],
+    ratingAverage: 4.6,
+    totalRating: 605,
+    likePercentage: 97,
+    totalEnrolled: "222,014",
+    instructorName: "Amalia B.Stephens"
+} as CourseInfo
+
 function TitleSection(props: any) {
     return (
         <div id="title-section" className="ts-bg">
@@ -30,7 +52,7 @@ function TitleSection(props: any) {
 
                         <div className="title-name">
                             <h1 className="tn-text">
-                            Lesson | Small Talk & Conversational Vocabulary
+                            {courseInfoData.name}
                             </h1>
                         </div>
 
@@ -40,29 +62,21 @@ function TitleSection(props: any) {
                                     <a href="#">
                                         <div className="r-star-b">
                                             <div className="star-row">
-                                                <div className="star-icon">
-                                                    <CourseInfoStarIcon />
-                                                </div>
-                                                <div  className="star-icon">
-                                                    <CourseInfoStarIcon />
-                                                </div>
-                                                <div className="star-icon">
-                                                    <CourseInfoStarIcon />
-                                                </div>
-                                                <div className="star-icon">
-                                                    <CourseInfoStarIcon />
-                                                </div>
-                                                <div className="star-icon">
-                                                    <CourseInfoStarIcon />
-                                                </div>
+                                                {
+                                                    courseInfoData.starList.map((s: any) => {
+                                                        return <div className="star-icon">
+                                                                    <CourseInfoStarIcon />
+                                                                </div>
+                                                    })
+                                                }
                                             </div>
 
                                             <span className="average">
-                                                4.6
+                                                {courseInfoData.ratingAverage}
                                             </span>
                                             
                                             <div className="total">
-                                                605 ratings
+                                                {courseInfoData.totalRating} ratings
                                             </div>
                                         </div>
 
@@ -77,7 +91,7 @@ function TitleSection(props: any) {
                                                     <LikeIcon />
                                                 </div>
                                                 <div className="total">
-                                                    97%
+                                                    {courseInfoData.likePercentage}%
                                                 </div>
                                             </div>
                                         </a>
@@ -95,7 +109,7 @@ function TitleSection(props: any) {
                                         </div>
 
                                         <div className="tsib-text">
-                                            Amalia B.Stephens
+                                            {courseInfoData.instructorName}
                                         </div>
                                     </div>
                                 </a>
@@ -118,7 +132,7 @@ function TitleSection(props: any) {
                             </div>
 
                             <div className="tse-sub">
-                                <span><strong>222,014</strong> already enrolled</span>
+                                <span><strong>{courseInfoData.totalEnrolled}</strong> already enrolled</span>
                             </div>
                         </div>
                     </div>
