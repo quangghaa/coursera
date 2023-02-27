@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NextArrowIcon, PreviousArrowIcon } from "../../utils/course-item-img";
 import CourseItem from "./course-item";
@@ -76,6 +76,10 @@ function CourseList(props: any) {
     function itemClick() {
         navigate("/learn/something")
     }
+
+    useEffect(() => {
+        props.setPage(0)
+    }, [])
  
     return (
         <div className="app-body"> 

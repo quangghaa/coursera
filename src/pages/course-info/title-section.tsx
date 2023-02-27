@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, CourseInfoStarIcon, GatechImg, InstructorImg, LikeIcon } from "../../utils/course-info";
 import { StarIcon } from "../../utils/course-item-img";
 
@@ -24,7 +25,15 @@ const courseInfoData = {
     instructorName: "Amalia B.Stephens"
 } as CourseInfo
 
+
+
 function TitleSection(props: any) {
+    const navigate = useNavigate()
+
+    function enrollClick() {
+        navigate("/enroll")
+    }
+
     return (
         <div id="title-section" className="ts-bg">
             <div className="ts-content">
@@ -119,7 +128,7 @@ function TitleSection(props: any) {
                         <div className="ts-enroll">
                             <div className="tse-main">
                                 <div className="">
-                                    <button className="tsem-btn">
+                                    <button className="tsem-btn" onClick={enrollClick}>
                                         Go To Course
                                     </button>
                                 </div>

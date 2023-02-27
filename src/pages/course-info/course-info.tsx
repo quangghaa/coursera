@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import About from "./about";
 import CINavigation from "./CINavigation";
 import Comment from "./comment";
@@ -11,6 +11,10 @@ import Syllabus from "./syllabus";
 import TitleSection from "./title-section";
 
 function CourseInfo(props: any) {
+    useEffect(() => {
+        props.setPage(1)
+    }, [])
+
     return (
         <div>
             <TitleSection />

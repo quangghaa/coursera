@@ -95,48 +95,65 @@ function Header(props: any) {
                     <div className="h-logo" onClick={toHome}>
                         <LogoImg />
                     </div>
-                    <div className="h-explore-btn" onMouseOver={props.hold}>
-                        <button className="h-explore-btn-b" onMouseOver={props.show} onMouseLeave={props.hide}>
-                            Explore
-                            &nbsp;
-                            {
-                                props.isIn == 0 ? <DropdownIcon /> : <DropdownIconBlue />
-                            }
-                        </button>
-                    </div>
+                    {
+                        props.page == 2 ? 
+                        <></>
+                        :
+                        <div className="h-explore-btn" onMouseOver={props.hold}>
+                            <button className="h-explore-btn-b" onMouseOver={props.show} onMouseLeave={props.hide}>
+                                Explore
+                                &nbsp;
+                                {
+                                    props.isIn == 0 ? <DropdownIcon /> : <DropdownIconBlue />
+                                }
+                            </button>
+                        </div>
+                    }   
+                    
                     <div id="header-search-id" className="h-search h-ml">
-                        <Search className="h-search-b" placeholder="What do you want to learn" onSearch={onSearch} enterButton />
+                        {
+                            props.page == 2 ? 
+                            <Search className="h-search-b" placeholder="What do you want to learn" onSearch={onSearch} enterButton="Search" />
+                            :
+                            <Search className="h-search-b" placeholder="What do you want to learn" onSearch={onSearch} enterButton />
+                        }
                     </div>
                 </div>
 
                 <div className="h-right">
-                    <ul className="h-nav">
-                        <li className="h-nav-item">
-                            {/* <div className="h-nav-dropdown-item">
-                                Online Degrees 
-                                &nbsp;
-                                <BigDropdownIcon />
-                            </div> */}
+                    {
+                        props.page == 2 ? 
+                        <></>
+                        :
+                        <ul className="h-nav">
+                            <li className="h-nav-item">
+                                {/* <div className="h-nav-dropdown-item">
+                                    Online Degrees 
+                                    &nbsp;
+                                    <BigDropdownIcon />
+                                </div> */}
 
-                            <Dropdown menu={{ items }} placement="bottomLeft" arrow>
-                                <div className="h-nav-dropdown-item">
-                                    <button className="h-nav-dropdown-item-btn">
-                                        Online Degrees 
-                                        &nbsp;
-                                        <BigDropdownIcon />
-                                    </button>
+                                <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+                                    <div className="h-nav-dropdown-item">
+                                        <button className="h-nav-dropdown-item-btn">
+                                            Online Degrees 
+                                            &nbsp;
+                                            <BigDropdownIcon />
+                                        </button>
+                                    </div>
+                                </Dropdown>
+                            </li>
+                            <li className="h-nav-item hover-underline">Find your New Career</li>
+                            <li className="h-nav-item hover-underline">For Enterprise</li>
+                            <li className="h-nav-item hover-underline" >For Universities</li>
+                            <li className="h-nav-item pr-0.5rem">
+                                <div className="bell-icon">
+                                    <BellIcon />
                                 </div>
-                            </Dropdown>
-                        </li>
-                        <li className="h-nav-item hover-underline">Find your New Career</li>
-                        <li className="h-nav-item hover-underline">For Enterprise</li>
-                        <li className="h-nav-item hover-underline" >For Universities</li>
-                        <li className="h-nav-item pr-0.5rem">
-                            <div className="bell-icon">
-                                <BellIcon />
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    }
+                    
 
                     {/* <div className="login-and-join">
                         <div className="laj-box">

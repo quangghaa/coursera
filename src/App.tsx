@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/header';
 import ModalExplore from './components/modal/explore';
+import CECourseInfo from './pages/course-enroll/ce-course-info';
+import CEDiscussion from './pages/course-enroll/ce-discussion';
+import CEMessage from './pages/course-enroll/ce-message';
+import CEModule from './pages/course-enroll/ce-module';
+import CENote from './pages/course-enroll/ce-note';
 import CourseInfo from './pages/course-info/course-info';
 import CourseList from './pages/course-list/course-list';
 
@@ -293,6 +298,8 @@ function App() {
   const [goalData, setGoalData] = useState(fakeAdvanceCareer)
   const [subjectData, setSubjectData] = useState(fakeBusiness)
 
+  const [page, setPage] = useState(0) // 0-course list, 1-course info, 2-course enroll, 3-course understanding
+
   function showDropdown(e: any) {
     e.stopPropagation()
     // console.log("showDropdown")
@@ -430,18 +437,22 @@ function App() {
     }
   }
 
-
-
   return (
     <div className='app'>
       <BrowserRouter>
-        <Header isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
+        <Header page={page} isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
         <div className='app-body-bg'>
-            <Routes>
-              <Route path="/" element={<CourseList />} />
-              <Route path="/learn/:name" element={<CourseInfo />} />
-
-            </Routes>
+          <Routes>
+            <Route path="/" element={<CourseList setPage={setPage} />} />
+            <Route path="/learn/:name" element={<CourseInfo setPage={setPage} />} />
+            <Route path="/enroll" element={<CEModule setPage={setPage} />} >
+            </Route>
+            <Route path="/enroll/module" element={<CEModule setPage={setPage} />} />
+            <Route path='/enroll/note' element={<CENote setPage={setPage} />} />
+            <Route path='/enroll/discussion' element={<CEDiscussion setPage={setPage} />} />
+            <Route path='/enroll/message' element={<CEMessage setPage={setPage} />} />
+            <Route path='/enroll/course-info' element={<CECourseInfo setPage={setPage} />} />
+          </Routes>
         </div>
 
         <ModalExplore tipe={tipe} setTipe={setTipe} goalData={goalData} subjectData={subjectData} close={closeDropdown} showChildModal={showChildModal} closeChildModal={closeChildModal}
