@@ -1,5 +1,7 @@
 import React from "react";
 import navLogo from "../assets/course-enroll/nav-logo.png"
+import noteIcon from "../assets/course-enroll/icon_note.svg"
+import highlightIcon from "../assets/course-enroll/icon_highlight.svg"
 
 function NavLogo() {
     return (
@@ -73,6 +75,30 @@ function DayIcon() {
     )
 }
 
+function DownIcon2() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="20" viewBox="0 0 20 20" width="20" data-testid="chevron-down-icon" id="cds-react-aria-4"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 14.293L1.354 5.646l-.708.708L10 15.707l9.354-9.353-.707-.708L10 14.293z" fill="currentColor"></path></svg>
+    )
+}
+
+function NoteIcon() {
+    return (
+        <img src={noteIcon} alt="note-icon" width={84} height={84}/>
+    )
+}
+
+function HighlightIcon() {
+    return (
+        <img src={highlightIcon} alt="highlight-icon" width={84} height={84}/>
+    )
+}
+
+function SelectedIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="20" viewBox="0 0 20 20" width="20" id="cds-react-aria-25"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.753 3.658L7.713 17.424.33 10.742l1.342-1.483 5.876 5.317 10.7-12.234 1.506 1.316z" fill="currentColor"></path></svg>
+    )
+}
+
 export {NavLogo, DownIcon, VideoIcon, ReadingIcon, CompleteIcon, BigVideoIcon, CalculatorIcon,
     LocationIcon, VerticalDotIcon, EstimateIcon, UptodateIcon, 
-    DayIcon}
+    DayIcon, DownIcon2, NoteIcon, HighlightIcon, SelectedIcon}

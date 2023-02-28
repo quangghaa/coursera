@@ -1,5 +1,5 @@
 import { Col, Row } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/header';
 import ModalExplore from './components/modal/explore';
@@ -437,11 +437,24 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    var id = (document.getElementById("app-body-id")) as HTMLElement
+    if(page == 2) {
+      if(!id.classList.contains("bg-white")) {
+        id.classList.add("bg-white")
+      }
+    } else {
+      if(id.classList.contains("bg-white")) {
+        id.classList.remove("bg-white")
+      }
+    }
+  }, [page])
+
   return (
     <div className='app'>
       <BrowserRouter>
         <Header page={page} isIn={isIn} show={(e: any) => showDropdown(e)} hide={hideDropdown} hold={holdDropdown} />
-        <div className='app-body-bg'>
+        <div id="app-body-id" className='app-body-bg'>
           <Routes>
             <Route path="/" element={<CourseList setPage={setPage} />} />
             <Route path="/learn/:name" element={<CourseInfo setPage={setPage} />} />
