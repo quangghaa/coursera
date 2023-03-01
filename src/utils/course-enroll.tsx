@@ -99,6 +99,31 @@ function SelectedIcon() {
     )
 }
 
+function ArrowRightIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="16" viewBox="0 0 16 16" width="16" id="cds-react-aria-8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.793 7.5L7.646 2.354l.708-.708L14.707 8l-6.353 6.354-.708-.707L12.793 8.5H2v-1h10.793z" fill="currentColor"></path></svg>
+    )
+}
+
+function LikeIcon() {
+    return (
+        <svg className="like-icon-style" viewBox="0 0 48 48" role="img" aria-labelledby="ThumbsUp132695e4-b1a6-4fe3-ef58-038423b92d35 ThumbsUp132695e4-b1a6-4fe3-ef58-038423b92d35Desc" xmlns="http://www.w3.org/2000/svg"><title id="ThumbsUp132695e4-b1a6-4fe3-ef58-038423b92d35">Thumbs Up</title><path d="M4.358,22.274 L6.749,36.715 C7.472,42.179 12.039,46.274 17.378,46.274 L35.43,46.274 C36.741,46.101 43.819,40.689 44.18,32.232 C44.33,28.705 43.587,26.061 41.97,24.374 C40.153,22.479 37.665,22.274 36.679,22.274 L28.179,22.274 C26.538,22.311 25.251,21.716 24.556,20.618 C23.842,19.489 23.876,18.01 24.65,16.452 L26.349,13.401 C27.652,11.144 28.03,8.678 27.394,6.624 C26.88,4.966 25.716,3.58 24.005,2.578 L10.71,22.274 L4.358,22.274 Z M35.43,48.274 L17.378,48.274 C11.04,48.274 5.62,43.431 4.772,37.01 L2,20.274 L9.648,20.274 L23.333,0 L24.11,0.372 C26.753,1.637 28.549,3.594 29.304,6.032 C30.105,8.617 29.662,11.663 28.089,14.388 L26.419,17.384 C25.996,18.237 25.925,19.041 26.247,19.549 C26.553,20.034 27.245,20.274 28.16,20.274 L36.679,20.274 C37.921,20.274 41.065,20.539 43.414,22.991 C45.422,25.086 46.352,28.224 46.178,32.316 C45.78,41.653 37.863,48.274 35.43,48.274 L35.43,48.274 Z" role="presentation"></path></svg>
+    )
+}
+
+function ReplyIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="16" viewBox="0 0 16 16" width="16" id="cds-react-aria-76"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.983 1.5h8.034l.017.001a2.65 2.65 0 012.465 2.465l.001.017v5.084l-.001.017a2.65 2.65 0 01-2.465 2.465l-.017.001H6.21l-2.468 2.525c-.372.4-.934.511-1.408.324-.502-.199-.834-.695-.834-1.349V3.983l.001-.017a2.65 2.65 0 012.465-2.465l.017-.001zm.035 1A1.65 1.65 0 002.5 4.018v9.032c0 .296.128.39.201.419a.282.282 0 00.311-.077l.005-.006L5.79 10.55h6.192A1.65 1.65 0 0013.5 9.032V4.018A1.65 1.65 0 0011.982 2.5H4.018z" fill="currentColor"></path></svg>
+    )
+}
+
+function LinkIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="16" viewBox="0 0 16 16" width="16" id="cds-react-aria-25"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 3.5H6v1H2.5v9h9V10h1v4.5h-11v-11zM13.5 2.5H10v-1h4.5V6h-1V2.5z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.646 8.646l7-7 .708.708-7 7-.708-.708z" fill="currentColor"></path></svg>
+    )
+}
+
 export {NavLogo, DownIcon, VideoIcon, ReadingIcon, CompleteIcon, BigVideoIcon, CalculatorIcon,
     LocationIcon, VerticalDotIcon, EstimateIcon, UptodateIcon, 
-    DayIcon, DownIcon2, NoteIcon, HighlightIcon, SelectedIcon}
+    DayIcon, DownIcon2, NoteIcon, HighlightIcon, SelectedIcon, 
+    ArrowRightIcon, LikeIcon, ReplyIcon, LinkIcon}
