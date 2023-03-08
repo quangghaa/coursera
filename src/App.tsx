@@ -458,13 +458,13 @@ function App() {
           <Routes>
             <Route path="/" element={<CourseList setPage={setPage} />} />
             <Route path="/learn/:name" element={<CourseInfo setPage={setPage} />} />
-            <Route path="/enroll" element={<CEModule setPage={setPage} />} >
-            </Route>
+            <Route path="/enroll" element={<CEModule setPage={setPage} />} />
             <Route path="/enroll/module" element={<CEModule setPage={setPage} />} />
             <Route path='/enroll/note' element={<CENote setPage={setPage} />} />
             <Route path='/enroll/discussion' element={<CEDiscussion setPage={setPage} />} />
             <Route path='/enroll/message' element={<CEMessage setPage={setPage} />} />
             <Route path='/enroll/course-info' element={<CECourseInfo setPage={setPage} />} />
+            <Route path='/enroll/course-understanding' element={<CECourseInfo setPage={setPage} />} />
           </Routes>
         </div>
 

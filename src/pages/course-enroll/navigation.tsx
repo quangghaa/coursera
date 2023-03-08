@@ -17,30 +17,47 @@ function Navigation(props: any) {
 
     const navigate = useNavigate()
 
+    let mapKey = new Map<number, string>(
+        [
+            [1, "/enroll/module"],
+            [2, "/enroll/note"],
+            [3, "/enroll/discussion"],
+            [4, "/enroll/message"],
+            [5, "/enroll/course-info"],
+        ]
+    )
+
     function navClick(e: any,id: any) {
         e.stopPropagation()
-        switch(id) {
-            case 1: {
-                navigate("/enroll/module")
-                break
-            }
-            case 2: {
-                navigate("/enroll/note")
-                break
-            }
-            case 3: {
-                navigate("/enroll/discussion")
-                break
-            }
-            case 4: {
-                navigate("/enroll/message")
-                break
-            }
-            case 5: {
-                navigate("/enroll/course-info")
-                break
+        if(id != undefined) {
+            let url = mapKey.get(id)
+            if(url != undefined) {
+                navigate(url)
             }
         }
+        // switch(id) {
+        //     case 1: {
+                
+        //         navigate("/enroll/module")
+        //         break
+        //     }
+        //     case 2: {
+        //         navigate("/enroll/note")
+        //         break
+        //     }
+        //     case 3: {
+        //         navigate("/enroll/discussion")
+        //         break
+        //     }
+        //     case 4: {
+        //         navigate("/enroll/message")
+        //         break
+        //     }
+        //     case 5: {
+        //         navigate("/enroll/course-info")
+        //         break
+        //     }
+        // }
     }
 
     useEffect(() => {

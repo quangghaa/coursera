@@ -2,6 +2,8 @@ import React from "react";
 import navLogo from "../assets/course-enroll/nav-logo.png"
 import noteIcon from "../assets/course-enroll/icon_note.svg"
 import highlightIcon from "../assets/course-enroll/icon_highlight.svg"
+import ama from "../assets/course-enroll/Amalia_Stephens.png"
+import intro1 from "../assets/course-enroll/1_intro.png"
 
 function NavLogo() {
     return (
@@ -123,7 +125,26 @@ function LinkIcon() {
     )
 }
 
+function TeacherImg() {
+    return (
+        <img src={ama} className="teacher-style" alt="amalia" />
+    )
+}
+
+function PaperIcon() {
+    return (
+        <svg aria-hidden="true" viewBox="0 0 50 50" role="img" aria-labelledby="StackedFile91ea4bcf-3fd8-46bc-c279-838d62f75437 StackedFile91ea4bcf-3fd8-46bc-c279-838d62f75437Desc" xmlns="http://www.w3.org/2000/svg" style={{fill: "rgb(31, 31, 31)", height: "18px", width: "18px"}}><title id="StackedFile91ea4bcf-3fd8-46bc-c279-838d62f75437">Stacked File</title><g xmlns="http://www.w3.org/2000/svg" role="presentation"><path d="m37 6h6v29c0 7.1797-5.8203 13-13 13h-19v-6h-6v-42h32v6zm-30 34h4v-34h24v-4h-28v38zm34-5v-27h-28v38h17c6.0751 0 11-4.9249 11-11zm-21-17h14v2h-14v-2zm0 8h14v2h-14v-2zm0 8h10v2h-10v-2z"></path></g></svg>
+    )
+}
+
+function RelatedCourseImg() {
+    return (
+        <img src={intro1} alt="relatedCourse" className="rc-img-style" />
+    )
+}
+
 export {NavLogo, DownIcon, VideoIcon, ReadingIcon, CompleteIcon, BigVideoIcon, CalculatorIcon,
     LocationIcon, VerticalDotIcon, EstimateIcon, UptodateIcon, 
     DayIcon, DownIcon2, NoteIcon, HighlightIcon, SelectedIcon, 
-    ArrowRightIcon, LikeIcon, ReplyIcon, LinkIcon}
+    ArrowRightIcon, LikeIcon, ReplyIcon, LinkIcon, TeacherImg,
+    PaperIcon, RelatedCourseImg}
