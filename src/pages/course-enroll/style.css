@@ -40,7 +40,7 @@
     color: #1f1f1f;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
 }
@@ -50,13 +50,11 @@
     letter-spacing: 0;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 400;
 }
 
-.cen-body {
-
-}
+.cen-body {}
 
 .cen-body ul {
     margin-bottom: 8px;
@@ -263,6 +261,7 @@
         max-width: 66.666667%;
         flex-basis: 66.666667%;
     }
+
     .m-right {
         flex-grow: 0;
         max-width: 33.333333%;
@@ -286,11 +285,12 @@
 }
 
 .main-head {
-    margin: 0px;
-        padding: 0px;
-        display: flex;
-        flex-direction: row;
-        font-size: 30px;
+    margin: 0.5rem 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+
 }
 
 .main-head-btn {
@@ -306,6 +306,15 @@
     z-index: 1;
     background: #fff;
     border: unset;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.main-head-btn:hover {
+    cursor: pointer;
+    border-color: rgb(7, 114, 202);
+    background: aliceblue;
+    ;
 }
 
 .head-icon-box {
@@ -407,7 +416,10 @@
 }
 
 .mb-content {
-
+    /* margin: 0.5rem 0; */
+    /* border-radius: 5px; */
+    /* box-sizing: border-box; */
+    /* border: 1px solid #fff; */
 }
 
 .mbc-body-box {
@@ -426,13 +438,11 @@
 
 .mbc-body ul li {
     line-height: 21px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     font-size: 1em;
 }
 
-.mbcb-link {
-    
-}
+.mbcb-link {}
 
 .mbcb-item {
     margin: 0px -8px;
@@ -491,7 +501,7 @@
     font-weight: 400;
 }
 
-.sub-item-info{
+.sub-item-info {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -523,7 +533,7 @@
 }
 
 .down-hib {
-    transform: rotate(90deg); 
+    transform: rotate(90deg);
 }
 
 .main-body-show {
@@ -575,7 +585,7 @@
     color: #1f1f1f;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
 }
@@ -659,7 +669,7 @@
     color: #1f1f1f;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
     text-align: center;
@@ -728,7 +738,7 @@
     color: #1f1f1f;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
 }
@@ -815,6 +825,7 @@
     .note-pd {
         padding-left: 78px;
     }
+
     .note {
         margin: 32px 48px;
     }
@@ -824,7 +835,7 @@
     color: #1f1f1f;
     font-size: 1.75rem;
     line-height: 2.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
     margin: 0px 0px 48px;
@@ -935,7 +946,7 @@
     transform: initial;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
     color: #1f1f1f;
@@ -1012,7 +1023,7 @@
     text-align: center;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 400;
     letter-spacing: -0.1px;
     margin: 10px 0;
@@ -1158,7 +1169,7 @@
     box-shadow: inset 0 0 0 1px #0056d2;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 700;
     letter-spacing: -0.1px;
     padding: 8px 16px;
@@ -1166,8 +1177,7 @@
     cursor: pointer;
 }
 
-.search-row-btn {
-}
+.search-row-btn {}
 
 .create-post-btn {
     border-radius: 4px;
@@ -1209,9 +1219,7 @@
     border: 1px solid rgb(229, 231, 232);
 }
 
-.af-item {
-
-}
+.af-item {}
 
 .af-item a {
     color: inherit;
@@ -1295,7 +1303,7 @@
     border-bottom: 1px solid rgb(184, 186, 187);
 }
 
-.pi-item-content{
+.pi-item-content {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -1363,7 +1371,7 @@
     font-size: 1.1em;
 }
 
-.pii-row-4{
+.pii-row-4 {
     display: flex;
     justify-content: space-between;
 }
@@ -1515,7 +1523,7 @@
     color: #525252;
     font-size: 12px;
     line-height: 18px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
 }
 
 .m-4px {
@@ -1561,7 +1569,7 @@
     margin: 0px 0px 16px;
 }
 
-.rbd-content p{
+.rbd-content p {
     letter-spacing: 0px;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1629,7 +1637,7 @@
     color: rgb(255, 255, 255);
     font-size: 12px;
     line-height: 18px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1790,8 +1798,9 @@
 @media screen and (min-width: 600px) {
     .cs-1-a {
         max-width: 83.333333%;
-    flex-basis: 83.333333%;
+        flex-basis: 83.333333%;
     }
+
     .cs-1-b {
         text-align: right;
         flex-grow: 0;
@@ -1805,7 +1814,7 @@
     letter-spacing: 0;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 400;
 }
 
@@ -1894,7 +1903,7 @@
 }
 
 .ci-title p {
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -1915,13 +1924,13 @@
 .cb-text p {
     font-size: 14px;
     line-height: 21px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     margin-bottom: 10px;
     font-weight: 500;
 }
 
 .cb-text p:first-child {
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     font-weight: 700;
 }
 
@@ -1984,7 +1993,7 @@
 
 .t-content-b {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 1300px) {
@@ -2000,7 +2009,7 @@
     flex-direction: column;
 }
 
-.t-content-b-1 span a{
+.t-content-b-1 span a {
     color: #2668b8;
     font-weight: 700;
     margin-left: 10px;
@@ -2014,10 +2023,10 @@
 
 .t-content-b-2 {
     margin-top: 2px;
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
     font-size: 12px;
     line-height: 18px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
 }
 
 .ci-basic {
@@ -2055,9 +2064,11 @@
     .basic-col-1:first-child {
         min-width: 200px;
     }
+
     .basic-col-1 {
         padding: 15px 20px;
     }
+
     .basic-col-2 {
         padding: 15px 20px;
     }
@@ -2084,12 +2095,12 @@
 }
 
 .ci-section h2 {
-    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
     width: 100%;
     font-size: 22px;
     line-height: 24px;
     margin-bottom: 10px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     font-weight: 400;
     display: flex;
 }
@@ -2105,13 +2116,13 @@
     margin-top: 24px;
     display: block;
     position: relative;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .ci-section-head {
-    color: rgba(0,0,0,.55);
+    color: rgba(0, 0, 0, .55);
     background-color: #f6f6f6;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     height: 48px;
     padding: 15px 16px;
 }
@@ -2222,7 +2233,7 @@
 
 .hiw-head {
     color: #525252;
-    font-weight: 600!important;
+    font-weight: 600 !important;
     margin-bottom: 12px;
     padding: 15px 16px;
 }
@@ -2268,7 +2279,7 @@
     font-family: "Source Sans Pro", Arial, sans-serif;
     letter-spacing: -0.1px;
     margin: 32px 0px 12px;
-    font-weight: 600!important;
+    font-weight: 600 !important;
 }
 
 .hiw-body p {
@@ -2283,7 +2294,7 @@
 }
 
 .no-m-top {
-    margin-top: unset!important;
+    margin-top: unset !important;
 }
 
 .mt-10 {
@@ -2302,20 +2313,20 @@
 .related-course-pd {
     padding: 30px;
     transition: all .25s ease-in-out;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     background-color: #fff;
 }
 
 .related-course {
     font-size: 14px;
     line-height: 21px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: OpenSans, Arial, sans-serif;
     display: block;
     color: #333;
 }
 
 .rc-head {
-    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
     width: 100%;
     font-size: 22px;
     line-height: 24px;
@@ -2331,7 +2342,7 @@
     cursor: pointer;
     background-color: #fff;
     min-height: 120px;
-    
+
 }
 
 .rc-a-pd {
@@ -2351,9 +2362,7 @@
     margin-bottom: 10px;
 }
 
-.rc-1 {
-
-}
+.rc-1 {}
 
 .rc-2 {
     margin: 0 30px;
@@ -2364,7 +2373,7 @@
 }
 
 .rc-2-a h3 {
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
     font-size: 20px;
     line-height: 24px;
     margin: 12px 0 8px;

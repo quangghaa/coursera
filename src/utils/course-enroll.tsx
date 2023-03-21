@@ -29,6 +29,18 @@ function ReadingIcon() {
     )
 }
 
+function BigReadingIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="20" viewBox="0 0 20 20" width="20" id="cds-react-aria-35"><g clip-path="url(#cds-react-aria-35_0)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"><path d="M10 1.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17zM.5 10a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"></path><path d="M4.36 6.29h4.366l.015.001A1.88 1.88 0 0110.5 8.035l.001.017v7.088l-1 .03a1.56 1.56 0 00-1.446-1.46H4.36V6.29zm1 1v5.42h2.741c.51.032.997.215 1.399.523V8.09a.88.88 0 00-.807-.8H5.36z"></path><path d="M11.274 6.29h4.366v7.42h-3.695a1.55 1.55 0 00-1.446 1.458L9.5 15.14V8.07h.5l-.499-.035A1.88 1.88 0 0111.26 6.29l.015-.001zm-.774 1.8v5.14a2.55 2.55 0 011.402-.52h2.738V7.29h-3.333a.88.88 0 00-.807.8z"></path></g><defs><clipPath id="cds-react-aria-35_0"><path fill="#fff" d="M0 0h20v20H0z"></path></clipPath></defs></svg>
+    )
+}
+
+function MessageIcon() {
+    return (
+        <svg aria-hidden="true" fill="none" focusable="false" height="20" viewBox="0 0 20 20" width="20" id="cds-react-aria-48"><g clip-path="url(#cds-react-aria-48_0)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"><path d="M10 1.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17zM.5 10a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"></path><path d="M7.788 5.758A1.19 1.19 0 006.5 6.983v7.363a.15.15 0 00.25.117l1.969-2.023h4.474l.022.002a1.178 1.178 0 001.285-1.215V6.983a1.19 1.19 0 00-1.288-1.225l-.021.002H7.809l-.02-.002zm.062-.998A2.19 2.19 0 005.5 7.008v7.315a1.15 1.15 0 001.946.857l.006-.005 1.69-1.735h4.007a2.182 2.182 0 002.351-2.238V7.008a2.19 2.19 0 00-2.35-2.248h-5.3z"></path></g><defs><clipPath id="cds-react-aria-48_0"><path fill="#fff" d="M0 0h20v20H0z"></path></clipPath></defs></svg>
+    )
+}
+
 function CompleteIcon() {
     return (
         <svg aria-labelledby="cds-react-aria-613-title" fill="none" focusable="false" height="20" role="img" viewBox="0 0 20 20" width="20" id="cds-react-aria-613"><title id="cds-react-aria-613-title">Completed</title><path d="M10 1a9 9 0 100 18 9 9 0 000-18zM8.36 14.63l-4-4L5.8 9.24l2.56 2.56L14.2 6l1.42 1.42-7.26 7.21z" fill="currentColor"></path></svg>
@@ -147,4 +159,4 @@ export {NavLogo, DownIcon, VideoIcon, ReadingIcon, CompleteIcon, BigVideoIcon, C
     LocationIcon, VerticalDotIcon, EstimateIcon, UptodateIcon, 
     DayIcon, DownIcon2, NoteIcon, HighlightIcon, SelectedIcon, 
     ArrowRightIcon, LikeIcon, ReplyIcon, LinkIcon, TeacherImg,
-    PaperIcon, RelatedCourseImg}
+    PaperIcon, RelatedCourseImg, MessageIcon, BigReadingIcon}

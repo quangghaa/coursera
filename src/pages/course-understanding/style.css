@@ -1,0 +1,644 @@
+.course-understanding {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: calc(100vh - 68px);
+    overflow-y: hidden;
+}
+
+.cu-head {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 8px 0 16px;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+}
+
+.breadcrumb-left ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.breadcrumb-left ul li a {
+    max-width: 30ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 16px;
+    position: relative;
+}
+
+.breadcrumb-left ul li p {
+    transform: translateY(-2px);
+}
+
+.bc-arrow {
+    margin: 0 4px;
+}
+
+.breadcrumb-right {
+    display: flex;
+}
+
+.breadcrumb-right a {
+    border-radius: 4px;
+    text-transform: none;
+    text-align: center;
+    max-width: 320px;
+    min-width: unset;
+    transition: none 0s ease 0s;
+    text-decoration: none;
+    color: rgb(0, 86, 210);
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    margin: 0px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-right a:hover {
+    text-decoration: underline;
+    background: rgb(224, 237, 253);
+}
+
+.breadcrumb-right a div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.bcr-arrow {
+    line-height: initial;
+}
+
+.cu-body {
+    width: 100%;
+    height: calc(100% - 68px);
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.nav-wrapper {
+    flex-basis: 25%;
+    max-width: 25%;
+    overflow-y: scroll;
+    padding-bottom: 68px;
+}
+
+.cu-nav li h2 {
+    font-weight: 700;
+    padding: 6px 24px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 20px;
+    color: rgba(0,0,0,.87);
+}
+
+.cu-nav li h2:hover {
+    cursor: pointer;
+    background: #f7f7f7;
+}
+
+.cu-nav-child {
+    display: none;
+}
+
+.cu-nav-child li {
+    padding: 8px 24px;
+    border-left: 6px solid white;
+}
+
+.cu-nav-child li:hover {
+    border-color: #2a73cc;
+    background: #f7f7f7;
+}
+
+.cu-nav-child li a {
+    display: flex;
+    color: black;
+    font-size: 0.875rem;
+}
+
+.cu-nav-child li a div p {
+    line-height: 1.25rem;
+}
+
+.cu-nav-icon-box {
+    flex-basis: 32px;
+}
+
+.main-body {
+    flex-basis: 75%;
+    height: auto;
+    overflow-y: auto;
+}
+
+.show {
+    display: block;
+}
+
+.discussion-sec {
+    margin-top: 24px;
+    max-width: 960px;
+    color: rgb(31, 31, 31);
+}
+
+.ds-head h1 {
+    margin: 16px 0 24px;
+    font-size: 2.125rem;
+    line-height: 2.625rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.ds-content p {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.dsc-des {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 16px;
+    min-height: 24px;
+}
+
+.dsc-hint {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    padding-left: 32px;
+    margin-left: 0px;
+}
+
+.dsc-hint li {
+    margin-bottom: 8px;
+    padding-left: 8px;
+    list-style-type: disc;
+}
+
+.ds-p1 {
+    margin-top: 4px;
+    color: #636363;
+}
+
+.reply-form-wrapper {
+    margin: 24px 0 40px;
+    padding: 28px 34px 34px;
+    background-color: rgba(0,0,0,.05);
+}
+
+.mb-6px {
+    margin-bottom: 6px;
+}
+
+.reply-form-wrapper .btn-row {
+    text-align: right;
+}
+
+.reply-form-wrapper .btn-row button {
+    color: #0156b8;
+    border: 1px solid #0156b8;
+    background-color: transparent;
+    min-width: 72px;
+    padding: 8px 20px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 0;
+    outline-offset: 4px;
+}
+
+.dsr-foot {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dsr-foot li {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #3277b2;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dsr-foot li:last-child {
+    font-size: 0.875rem;
+    text-transform: lowercase;
+    background-color: rgba(0,0,0,.255);
+}
+
+.total-response {
+    color: #525252;
+    font-size: 0.875rem;
+    line-height: 18px;
+    text-align: center;
+}
+
+.reading-sec {
+    color: rgb(31, 31, 31);
+    max-width: 790px;
+    padding: 0 16px;
+    padding-bottom: 68px;
+}
+
+.reading-sec h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    color: rgb(31, 31, 31);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    letter-spacing: -0.1px;
+    font-weight: 400;
+}
+
+.img-wrapper {
+    margin-bottom: 24px;
+}
+
+.des-text {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 16px;
+    min-height: 24px;
+}
+
+.bio {
+    margin-top: 3rem;
+}
+
+.bio-head {
+    border: 1px solid black;
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+
+.bio-body {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    min-height: 24px;
+    border: 1px solid rgb(229, 231, 232);
+    padding: 4px 16px;
+}
+
+.pdf {
+    margin-top: 3rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+    background-color: rgb(245, 247, 248);
+    border-radius: 8px;
+    height: 88px;
+    padding: 0px 24px;
+    align-items: center;
+    border: 3px solid transparent;
+}
+
+.pdf:hover {
+    text-decoration: none;
+    border-color: #0062e4;;
+}
+
+.pdf-title {
+    margin-left: 1rem;
+}
+
+.pdf-head {
+    font-weight: 600;
+    color: black;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    line-height: 1.5rem;
+}
+
+.pdf-tipe {
+    line-height: 1.5rem;
+    color: rgb(99, 99, 99);
+}
+
+.mt-2rem {
+    margin-top: 2rem;
+}
+
+.mt-3rem {
+    margin-top: 3rem;
+}
+
+.keypoints ul {
+    padding: 0 2rem;
+}
+
+.keypoints ul li {
+    list-style-type: disc;
+    line-height: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.mark-complete {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.done-state {
+    display: flex;
+    align-items: center;
+}
+
+.ds-icon {
+    color: rgb(29, 124, 80);
+}
+
+.ds-text {
+    color: rgb(29, 124, 80);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    margin-right: 24px;
+    margin-left: 4px;
+}
+
+.complete-btn {
+    border-radius: 4px;
+    text-transform: none;
+    text-align: center;
+    max-width: 320px;
+    min-width: unset;
+    transition: none 0s ease 0s;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 86, 210);
+    box-shadow: rgb(0 86 210) 0px 0px 0px 1px inset;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    padding: 12px 32px;
+    height: auto;
+    border: unset;
+}
+
+.complete-btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 64, 155);
+    cursor: pointer;
+}
+
+.react-row {
+    border-top: 1px solid rgb(221, 221, 221);
+    padding: 15px 0px;
+}
+
+.react-row button {
+    border-radius: 4px;
+    text-transform: none;
+    text-align: center;
+    max-width: 320px;
+    min-width: unset;
+    transition: none 0s ease 0s;
+    text-decoration: none;
+    color: rgb(0, 86, 210);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    padding: 8px;
+    border: unset;
+    background: transparent;
+}
+
+.react-row button span:nth-child(2) {
+    margin: 0 16px 0 6px;
+}
+
+.react-row button:hover {
+    cursor: pointer;
+    background: rgb(208, 225, 248);
+}
+
+.learn-more p {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 16px;
+    min-height: 24px;
+}
+
+.mb-16px {
+    margin-bottom: 16px;
+}
+
+.list-word {
+    padding: 0 1rem;
+}
+
+.list-word li {
+    list-style-type: decimal;
+}
+
+.meaning {
+    padding: 0 1rem;
+}
+
+.meaning li{
+    list-style-type: disc;
+}
+
+.meaning li p {
+    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    min-height: 24px;
+    margin-bottom: 10px;
+}
+
+.suggested ul li {
+    margin-bottom: 2.5rem;
+}
+
+.ideas-list {
+    padding: 0 1rem;
+}
+
+.ideas-list li {
+    list-style-type: disc;
+    line-height: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.practice-sec {
+    padding: 0px 32px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.prac-head {
+    padding: 32px 0;
+}
+
+.prac-head h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    letter-spacing: -0.1px;
+    font-weight: 400;
+    color: rgb(31, 31, 31);
+}
+
+.prac-head p {
+    color: rgb(31, 31, 31);
+    letter-spacing: 0px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.prac-head button {
+    text-transform: none;
+    text-align: center;
+    max-width: 320px;
+    min-width: unset;
+    transition: none 0s ease 0s;
+    text-decoration: none;
+    color: rgb(0, 86, 210);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    padding: 12px 16px;
+    margin-left: -16px;
+    background: transparent;
+    border: unset;
+    border-radius: 4px;
+}
+
+.prac-head button:hover {
+    cursor: pointer;
+    background: rgb(234, 239, 247);
+}
+
+.assignment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgb(229, 231, 232);
+}
+
+.grade {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-flow: row wrap;
+    padding: 24px 0px 48px;
+    border-bottom: 1px solid rgb(229, 231, 232);
+}
+
+.grade-require {
+    line-height: 1.5rem;
+}
+
+.grade-require span:first-child {
+    color: rgb(99, 99, 99);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+    margin-right: 8px;
+}
+
+.grade-require span:nth-child(2) {
+    color: rgb(99, 99, 99);
+    letter-spacing: 0px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.grade-title {
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.your-grade {
+    color: rgb(211, 0, 1);
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+}
+
+.grade div:nth-child(2) {
+    min-width: 300px;
+    min-height: 48px;
+    padding-left: 24px;
+    border-left: 1px solid rgb(229, 231, 232);
+}
+
+.no-border {
+    border: unset;
+}
+
+@media screen and (min-width: 600px) {
+    .discussion-sec,.reading-sec {
+        margin-top: 32px;
+    }
+    .prac-head {
+        padding: 48px 0 32px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .discussion-sec,.reading-sec {
+        margin-top: 48px;
+    }
+    .prac-head {
+        padding: 48px 0;
+    }
+    .prac-head p {
+        margin-top: 4px;
+    }
+
+    .prac-head button {
+        margin-top: 4px;
+    }
+}

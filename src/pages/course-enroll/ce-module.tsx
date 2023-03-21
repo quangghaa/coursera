@@ -1,16 +1,10 @@
 import { Progress } from "antd";
 import React, { useEffect, useState } from "react";
+import { Lesson, LessonDetail, Module, Schedule, SubLesson, WeekGoal } from "../../type/types";
 import { BigVideoIcon, CalculatorIcon, CompleteIcon, DayIcon, DownIcon, EstimateIcon, LocationIcon, ReadingIcon, UptodateIcon, VerticalDotIcon, VideoIcon } from "../../utils/course-enroll";
 import Navigation from "./navigation";
 import "./style.css"
 
-interface WeekGoal {
-    totalDays: number,
-    from: string,
-    to: string,
-    goal: number, // how many days per week
-    checked: number[], // weekly checkin
-}
 
 const weekGoalData = [
     {
@@ -22,13 +16,6 @@ const weekGoalData = [
     }
 ] as WeekGoal[]
 
-interface Schedule {
-    startTime: string,
-    estimatedTime: string,
-    state: number, // 0- no deadline, 1-deadline remind
-    weekGoal: WeekGoal[]
-}
-
 const scheduleData = [
     {
         startTime: "February 19, 2023 PST",
@@ -37,14 +24,6 @@ const scheduleData = [
         weekGoal: weekGoalData
     }
 ] as Schedule[]
-
-interface LessonDetail {
-    name: string,
-    tipe: number, // 0-Reading, 1-Video, 2-Quiz
-    effort: number,
-    unit: string,
-    state: number, // 0-not do, 1-doing, 2-done
-}
 
 const lessonDetailData = [
     {
@@ -84,31 +63,118 @@ const lessonDetailData = [
     },
 ] as LessonDetail[]
 
-interface SubLesson {
-    title: string,
-    details: LessonDetail[]
-}
+const introDetail = [
+    {
+        name: "Meet Your Classes",
+        tipe: 3,
+        effort: 10,
+        unit: "min",
+        state: 0
+    }
+] as LessonDetail[]
+
+const makingPreDetail = [
+    {
+        name: "Making Predictions Before You Listen ",
+        tipe: 1,
+        effort: 10,
+        unit: "min",
+        state: 0
+    },
+    {
+        name: "Prepare For Predicting and Review the Lesson",
+        tipe: 0,
+        effort: 30,
+        unit: "min",
+        state: 0
+    },
+    {
+        name: "Making Predictions",
+        tipe: 2,
+        effort: 2,
+        unit: "min",
+        state: 0
+    }
+] as LessonDetail[]
+
+const takingNoteDetail = [
+    {
+        name: "Note Taking Tutorial",
+        tipe: 1,
+        effort: 4,
+        unit: "min",
+        state: 0
+    },
+    {
+        name: "Extend Your Knowledge and Review the Lesson",
+        tipe: 0,
+        effort: 30,
+        unit: "min",
+        state: 0
+    },
+    {
+        name: "Listening Praticr #1: Listen and Take Notes",
+        tipe: 1,
+        effort: 6,
+        unit: "min",
+        state: 0
+    },
+    {
+        name: "Use Your Notes to Answer These Questions",
+        tipe: 2,
+        effort: 5,
+        unit: "questions",
+        state: 0
+    }
+] as LessonDetail[]
 
 const sublessonData = [
     {
         title: "Small Talk & Conversation Vocabulary",
         details: lessonDetailData
-    }
+    },
+    {
+        title: "Introduction",
+        details: introDetail
+    },
+    {
+        title: "Making Predictions",
+        details: makingPreDetail
+    },
+    {
+        title: "Taking Notes",
+        details: takingNoteDetail
+    },
+    {
+        title: "Synthesizing Infomation",
+        details: lessonDetailData
+    },
+    {
+        title: "Grammar For Speaking",
+        details: lessonDetailData
+    },
+    {
+        title: "Vocabulary Pratice and Listening Resources",
+        details: lessonDetailData
+    },
+    {
+        title: "Graded Assignments",
+        details: lessonDetailData
+    },
 ] as SubLesson[]
 
-interface Lesson {
-    name: string,
-    description: string,
-    totalVideoTime: number,
-    totalVideoTimeLeft: number,
-    timeUnit: string,
-    totalReadings: number,
-    totalReadingsCompleted: number,
-    subLessons: SubLesson[],
-    schedule: Schedule[]
-}
-
 const lessonData = [
+    {
+        name: "Listen, Speaking and Critical Thinking",
+        description: "In this module, we will learn some skills necessary for listening to and speaking about academic topics at the undergraduate level.",
+        totalVideoTime: 60,
+        totalVideoTimeLeft: 21,
+        timeUnit: "min",
+        totalReadings: 8,
+        totalReadingsCompleted: 6,
+        subLessons: sublessonData,
+        schedule: scheduleData
+    },
     {
         name: "Lesson | Small Talk & Conversation Vocabulary",
         description: "This lesson is part of a full course, Speak English Professionally: In Person, Online & On the Phone. Take this lesson to get a short tutorial on the learning objectives covered. To dive deeper into this topic, take the full course. In this lesson, you will review professional conversational vocabulary.",
@@ -122,11 +188,6 @@ const lessonData = [
     }
 ] as Lesson[]
 
-interface Module {
-    name: string,
-    lessons: Lesson[]
-}
-
 const moduleData = {
     name: "Module 1",
     lessons: lessonData, 
@@ -134,15 +195,26 @@ const moduleData = {
 
 function CEModule(props: any) {
     const [showMainBody, setShowMainBody] = useState(1)
-    const [showItem, setShowItem] = useState(1)
+    // const [showItem, setShowItem] = useState(1)
 
-    function itemClick(e: any) {
+    const [showItem, setShowItem] = useState<Map<number, number>>(new Map<number, number>())
+
+    function itemClick(e: any, id: number) {
         e.stopPropagation()
-        if(showItem == 0) {
-            setShowItem(1)
-        } else {
-            setShowItem(0)
+        console.log("Check click: ", showItem)
+        if(showItem.size == 0) return
+        let v = showItem.get(id) 
+        if(v == undefined) {
+            return
         }
+        if(v == 0) {
+            showItem.set(id, 1)
+        } else {
+            if(v == 1) {
+                showItem.set(id, 0)
+            }
+        }
+        setShowItem(new Map<number, number>(showItem))
     }
 
     function mainHeadClick(e: any) {
@@ -153,6 +225,16 @@ function CEModule(props: any) {
             setShowMainBody(0)
         }
     }
+
+    useEffect(() => {
+        // init map
+        let newMap = new Map<number, number>()
+        for(let i = 0; i < lessonData[0].subLessons.length; i++) {
+            newMap.set(i, 0)
+        }
+
+        setShowItem(newMap)
+    }, [])
 
     useEffect(() => {
         var headIconId = (document.getElementById("head-icon-id")) as HTMLElement
@@ -174,26 +256,32 @@ function CEModule(props: any) {
             }
         }
     }, [showMainBody])
-
     useEffect(() => {
-        var itemIconId = (document.getElementById("item-icon-id")) as HTMLElement
-        var itemBodyId = (document.getElementById("item-body-id")) as HTMLElement
-
-        if(showItem == 0) {
-            if(itemIconId.classList.contains("down-hib")) {
-                itemIconId.classList.remove("down-hib")
-            }
-            if(itemBodyId.classList.contains("main-body-show")) {
-                itemBodyId.classList.remove("main-body-show")
-            }
-        } else {
-            if(!itemIconId.classList.contains("down-hib")) {
-                itemIconId.classList.add("down-hib")
-            }
-            if(!itemBodyId.classList.contains("main-body-show")) {
-                itemBodyId.classList.add("main-body-show")
+        if(showItem.size == 0) return
+        for(let i = 0; i < lessonData[0].subLessons.length; i++) {
+            var x = showItem.get(i)
+            var iconId = "item-icon-" + i
+            var contentId = "item-body-" + i
+            var itemIconId = (document.getElementById(iconId)) as HTMLElement
+            var itemBodyId = (document.getElementById(contentId)) as HTMLElement
+            
+            if(x == 0) {
+                if(itemIconId.classList.contains("down-hib")) {
+                    itemIconId.classList.remove("down-hib")
+                }
+                if(itemBodyId.classList.contains("main-body-show")) {
+                    itemBodyId.classList.remove("main-body-show")
+                }
+            } else {
+                if(!itemIconId.classList.contains("down-hib")) {
+                    itemIconId.classList.add("down-hib")
+                }
+                if(!itemBodyId.classList.contains("main-body-show")) {
+                    itemBodyId.classList.add("main-body-show")
+                }
             }
         }
+
     }, [showItem])
 
     useEffect(() => {
@@ -263,11 +351,11 @@ function CEModule(props: any) {
                                         </div>
                                     </div>
                                     {
-                                        lessonData[0].subLessons.map((sl: SubLesson) => {
+                                        lessonData[0].subLessons.map((sl: SubLesson, i: number) => {
                                             return <div className="mb-content">
                                             <h2 className="main-head">
-                                                <button className="main-head-btn" onClick={(e: any) => itemClick(e)}>
-                                                    <div id="item-icon-id" className="head-icon-box">
+                                                <button className="main-head-btn" onClick={(e: any) => itemClick(e, i)}>
+                                                    <div id={"item-icon-" + i} className="head-icon-box">
                                                         <DownIcon />
                                                     </div>
                                                     <div className="head-btn-text-box">
@@ -277,7 +365,7 @@ function CEModule(props: any) {
                                                     </div>
                                                 </button>
                                             </h2>
-                                            <div id="item-body-id" className="mbc-body-box">
+                                            <div id={"item-body-" + i} className="mbc-body-box">
                                                 <div className="mbc-body">
                                                     <ul>
                                                         {

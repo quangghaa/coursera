@@ -10,35 +10,8 @@ import CEModule from './pages/course-enroll/ce-module';
 import CENote from './pages/course-enroll/ce-note';
 import CourseInfo from './pages/course-info/course-info';
 import CourseList from './pages/course-list/course-list';
-
-interface ChildItem {
-  name: string,
-  description: string,
-  image: string,
-  // tipe: number // 0-degree and 1-certificate
-}
-
-interface GoalObject {
-  title: string,
-  subtitle: string,
-  tipe: number, // 0-degree and 1-certificate and 3-advance career
-  dataScience: ChildItem[],
-  business: ChildItem[],
-  computerScience: ChildItem[],
-  arts: ChildItem[],
-  earnToward: ChildItem[]
-}
-
-interface SubjectObject {
-  title: string,
-  tipe: number,
-  degrees: ChildItem[],
-  subDegreeTitle: string,
-  certificates: ChildItem[],
-  subCertificateTitle: string,
-  getStarted: ChildItem[],
-  popularSkills: ChildItem[],
-}
+import CourseUnderstanding from './pages/course-understanding/course-understanding';
+import { ChildItem, GoalObject, LessonDetail, SubjectObject, SubLesson } from './type/types';
 
 const fakeDegree = {
   title: "Earn a Degree",
@@ -464,7 +437,7 @@ function App() {
             <Route path='/enroll/discussion' element={<CEDiscussion setPage={setPage} />} />
             <Route path='/enroll/message' element={<CEMessage setPage={setPage} />} />
             <Route path='/enroll/course-info' element={<CECourseInfo setPage={setPage} />} />
-            <Route path='/enroll/course-understanding' element={<CECourseInfo setPage={setPage} />} />
+            <Route path='/course-understanding' element={<CourseUnderstanding setPage={setPage} />} />
           </Routes>
         </div>
 
