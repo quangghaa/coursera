@@ -123,6 +123,11 @@
     background: #f7f7f7;
 }
 
+.highlight-nav-item {
+    border-color: #2a73cc!important;
+    background: #f7f7f7;
+}
+
 .cu-nav-child li a {
     display: flex;
     color: black;

@@ -3,9 +3,10 @@ import { BreadcrumbArrow, BreadcrumbArrowLeft } from "../../utils/course-underst
 
 interface Props {
     values: unknown
+    moveItem: (tipe: 'next' | 'previous') => void
 }
 
-const CUBreadcrumb: React.FC<Props> = ({ values }) => {
+const CUBreadcrumb: React.FC<Props> = ({ values, moveItem }) => {
     return (
         <div className="breadcrumb">
             <div className="breadcrumb-left">
@@ -35,7 +36,7 @@ const CUBreadcrumb: React.FC<Props> = ({ values }) => {
             </div>
 
             <div className="breadcrumb-right">
-                <a href="#">
+                <a href="#" onClick={() => moveItem('previous')}>
                     <div>
                         <span className="bcr-arrow">
                             <BreadcrumbArrowLeft />
@@ -46,7 +47,7 @@ const CUBreadcrumb: React.FC<Props> = ({ values }) => {
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="#" onClick={() => moveItem('next')}>
                     <div>
                         <span>
                             Next

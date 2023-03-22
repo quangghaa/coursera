@@ -148,6 +148,14 @@ const lessonDetailData = [
     },
   ] as SubLesson[]
 
+export interface NavIndex {
+    parentIndex: number;
+    childIndex: number;
+    selectedItem: LessonDetail;
+    stopMoveBack: boolean;
+    previous?: NavIndex;
+}
+
 function CourseUnderstanding(props: any) {
     useEffect(() => {
         props.setPage(2)
@@ -155,29 +163,108 @@ function CourseUnderstanding(props: any) {
 
     const [selectedLesson, setSelectedLesson] = useState<LessonDetail>()
     
-    const navItemClick = (lesson: LessonDetail) => {
-        setSelectedLesson(lesson)
+    const [navIndex, setNavIndex] = useState<NavIndex>({
+        parentIndex: 0,
+        childIndex: 0,
+        selectedItem: sublessonData[0].details[0],
+        stopMoveBack: false,
+    })
+
+    const navItemClick = (pInd: number, cInd: number, lesson: LessonDetail) => {
+        console.log("item: ", pInd, cInd, lesson.tipe)
+
+        const pre = {
+            ...navIndex
+        } as NavIndex
+
+        setNavIndex({
+            parentIndex: pInd,
+            childIndex: cInd,
+            selectedItem: lesson,
+            previous: pre
+        } as NavIndex)
+    }   
+
+    const moveItem = (tipe: 'next' | 'previous') => {
+        let pInd = navIndex?.parentIndex
+        let cInd = navIndex?.childIndex
+        switch(tipe) {
+            case 'next':
+                if(cInd < sublessonData[pInd].details.length - 1) {
+                    cInd++ 
+                } else {
+                    if(pInd < sublessonData.length - 1) {
+                        pInd++
+                        cInd = 0
+                    } else {
+                        pInd = 0
+                        cInd = 0
+                    }
+                }
+                console.log("next item: ", pInd, cInd)
+                
+                let pre1 = {...navIndex}
+
+                setNavIndex({
+                    parentIndex: pInd,
+                    childIndex: cInd,
+                    selectedItem: sublessonData[pInd].details[cInd],
+                    previous: pre1
+                } as NavIndex)
+                break
+            case 'previous':
+                    if(navIndex.stopMoveBack) {
+                        console.log("cant move back")
+                        return
+                    }
+                
+                    let isStop = false
+                    if(cInd > 0) {
+                        cInd-- 
+                    } else {
+                        if(pInd > 0) {
+                            pInd--
+                            cInd = sublessonData[pInd].details.length - 1
+                        } else {
+                            isStop = true
+                        }
+                    }
+                    console.log("back item: ", pInd, cInd, isStop)
+
+                    let pre2 = {...navIndex}
+
+                    setNavIndex({
+                        parentIndex: pInd,
+                        childIndex: cInd,
+                        selectedItem: sublessonData[pInd].details[cInd],
+                        stopMoveBack: isStop,
+                        previous: pre2
+                    } as NavIndex)
+                    break
+            default:
+                break
+        }
     }
 
     return (
         <div id="course-understanding" className="course-understanding">
             <div className="cu-head">
-                <CUBreadcrumb values={""} />
+                <CUBreadcrumb values={""} moveItem={moveItem} />
             </div>
 
             <div className="cu-body">
                 <div className="nav-wrapper">
-                    <CUNavigation values={""} func={navItemClick} navData={sublessonData} />
+                    <CUNavigation values={""} selectItem={navItemClick} navIndex={navIndex} navData={sublessonData} />
                 </div>
 
                 <div className="main-body">
-                    {selectedLesson?.tipe == 0 && 
+                    {navIndex.selectedItem.tipe == 0 && 
                     <CUReading values={""} />}
-                    {selectedLesson?.tipe == 1 && 
+                    {navIndex.selectedItem.tipe == 1 && 
                     <CUVideo values={""} />}
-                    {selectedLesson?.tipe == 2 &&
+                    {navIndex.selectedItem.tipe == 2 &&
                     <CUPractice values={""} />}
-                    {selectedLesson?.tipe == 3 &&
+                    {navIndex.selectedItem.tipe == 3 &&
                     <CUDiscussion values={""} />}
                 </div>
             </div>
